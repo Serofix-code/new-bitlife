@@ -5,7 +5,7 @@
   const U = NC.Utils;
   const GP = NC.GameEngine && NC.GameEngine.prototype;
 
-  NC.APP_VERSION = "2.1.0";
+  NC.APP_VERSION = "2.2.0";
   NC.SCHEMA_VERSION = Math.max(NC.SCHEMA_VERSION || 1, 12);
 
   NC.EXPANSIONS = Object.assign({}, NC.EXPANSIONS || {}, {

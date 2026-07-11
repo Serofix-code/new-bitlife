@@ -261,7 +261,7 @@ assert.equal(game.state.challenges.bankRobber.completed, true);
 
 
 // Country catalog and local flag assets.
-assert.equal(catalogs.origins.length, 9, "the initial real-country catalog should contain nine countries");
+assert.ok(catalogs.origins.length >= 21, "the world catalog should now contain at least twenty-one countries");
 for (const origin of catalogs.origins) {
   assert.ok(origin.firstNamesByGender && origin.firstNamesByGender.woman.length >= 10, `${origin.id} needs country-aware names`);
   await fs.access(path.join(root, origin.flag));

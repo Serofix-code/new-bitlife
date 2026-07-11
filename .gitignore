@@ -1,0 +1,5 @@
+.next-chapter-server-save.json
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

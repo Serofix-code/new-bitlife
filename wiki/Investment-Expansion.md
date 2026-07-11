@@ -19,3 +19,6 @@ Trading unlocks at age 18. Research unlocks at age 16 and consumes an activity p
 Prices change at every age-up. Market mood, sector drift, company volatility, and random fictional news affect the result. High-risk companies can experience severe setbacks. Dividend-paying companies may provide annual cash income.
 
 All companies and results are fictional. This is a game mechanic and not financial advice.
+
+
+Each company card now includes a recent line preview so players can quickly see whether the price has been trending up or down.

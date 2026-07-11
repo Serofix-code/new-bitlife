@@ -3949,3 +3949,53 @@ html[data-theme="light"] .v19-contraception.selected { background: #d8f3fb !impo
   .v21-holding-card { grid-template-columns: 40px minmax(0, 1fr); }
   .v21-holding-card .button { grid-column: 2; justify-self: start; }
 }
+
+/* v2.2 investment chart previews */
+.v21-market-overview {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.v21-chart-card {
+  margin: .65rem 0 .35rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: .7rem .8rem .55rem;
+  background: rgba(255,255,255,.03);
+}
+.v21-chart-head,
+.v21-chart-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+}
+.v21-chart-head span,
+.v21-chart-foot small {
+  color: var(--muted);
+  font-size: .78rem;
+}
+.v21-chart-head strong {
+  font-size: .82rem;
+}
+.v21-chart {
+  width: 100%;
+  height: 82px;
+  display: block;
+  margin: .35rem 0 .25rem;
+}
+.v21-market-overview .v21-chart {
+  height: 130px;
+}
+.v21-chart-axis {
+  stroke: rgba(255,255,255,.08);
+  stroke-width: 1;
+}
+.v21-company-card .v21-chart-card {
+  margin-top: .25rem;
+}
+.v21-holding-copy .v21-chart-card {
+  max-width: 340px;
+}

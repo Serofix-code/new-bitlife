@@ -18,3 +18,8 @@ Most annual events occur only once per life. Explicitly repeatable events have c
 ## Death and generations
 
 A completed life receives a ribbon. A living child can inherit the estate and continue the family. Occult traits may be inherited. Account collections remain available across unrelated lives and generations.
+
+
+## Countries and Cities
+
+Next Chapter includes a growing set of real countries, local currencies, flags, and curated city lists for birthplaces, emigration, and travel.
