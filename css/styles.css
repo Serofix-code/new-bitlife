@@ -3999,3 +3999,186 @@ html[data-theme="light"] .v19-contraception.selected { background: #d8f3fb !impo
 .v21-holding-copy .v21-chart-card {
   max-width: 340px;
 }
+
+/* Next Chapter v2.3: expansion hub, age-up headlines, crypto, businesses, landlords */
+.v23-expansion-hub,
+.v23-news,
+.v23-current-rental {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.v23-expansion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75rem;
+}
+.v23-expansion-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .8rem;
+  min-height: 92px;
+  padding: .9rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255,255,255,.025);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.v23-expansion-card:hover { transform: translateY(-1px); border-color: rgba(77,214,198,.55); }
+.v23-expansion-card-icon { font-size: 1.8rem; }
+.v23-expansion-card strong,
+.v23-expansion-card small { display: block; }
+.v23-expansion-card small { color: var(--muted); margin-top: .2rem; }
+.v23-expansion-card b { color: var(--muted); font-size: .8rem; }
+.v23-expansion-dialog { width: min(1040px, calc(100vw - 1.25rem)); max-height: 94vh; }
+.v23-summary-grid,
+.v23-social-dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .7rem;
+  margin-bottom: 1rem;
+}
+.v23-summary-grid > div,
+.v23-social-dashboard > div {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: .8rem;
+  background: rgba(255,255,255,.025);
+}
+.v23-summary-grid span,
+.v23-summary-grid small,
+.v23-social-dashboard span,
+.v23-social-dashboard small { display: block; color: var(--muted); }
+.v23-summary-grid strong,
+.v23-social-dashboard strong { display: block; font-size: 1.1rem; margin: .15rem 0; }
+.v23-market-grid,
+.v23-owned-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .85rem;
+}
+.v23-coin-card,
+.v23-business-card {
+  border: 1px solid var(--line);
+  border-radius: 19px;
+  background: rgba(255,255,255,.025);
+  padding: .9rem;
+}
+.v23-coin-card header,
+.v23-business-card header,
+.v23-current-rental {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.v23-coin-card header > div,
+.v23-business-card header > div,
+.v23-current-rental > div { flex: 1; }
+.v23-coin-card h3,
+.v23-business-card h3,
+.v23-current-rental h3 { margin: 0; }
+.v23-coin-card header p,
+.v23-business-card header p,
+.v23-current-rental p { margin: .15rem 0 0; color: var(--muted); }
+.v23-token-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #f7c64d, #d89000);
+  color: #241700;
+  font-weight: 900;
+}
+.v23-token-price { display: flex; justify-content: space-between; align-items: baseline; margin-top: .7rem; }
+.v23-token-price strong { font-size: 1.35rem; }
+.v23-token-price small { color: var(--muted); }
+.v23-spark { width: 100%; height: 88px; display: block; margin: .5rem 0; }
+.v23-spark > line { stroke: rgba(255,255,255,.1); stroke-width: 1; }
+.v23-spark .line { fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.v23-spark.positive .line,
+.v23-spark.positive circle { stroke: #25c76f; fill: #25c76f; }
+.v23-spark.positive .area { fill: rgba(37,199,111,.12); }
+.v23-spark.negative .line,
+.v23-spark.negative circle { stroke: #ef5b65; fill: #ef5b65; }
+.v23-spark.negative .area { fill: rgba(239,91,101,.12); }
+.v23-empty-chart { min-height: 70px; display: grid; place-items: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 12px; margin: .5rem 0; }
+.v23-owned-strip,
+.v23-business-metrics {
+  display: flex;
+  justify-content: space-between;
+  gap: .6rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: .65rem;
+  margin-top: .65rem;
+}
+.v23-business-metrics span { color: var(--muted); font-size: .82rem; }
+.v23-business-metrics b { color: var(--text); }
+.v23-start-list { display: grid; gap: .55rem; }
+.v23-start-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: .75rem;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: .75rem;
+  background: rgba(255,255,255,.02);
+}
+.v23-start-card > span { font-size: 1.55rem; }
+.v23-start-card h3 { margin: 0; }
+.v23-start-card p,
+.v23-start-card small { margin: .15rem 0 0; color: var(--muted); }
+.v23-news ul { margin: .5rem 0 0; padding-left: 1.2rem; }
+.v23-life-feed { gap: .55rem; }
+.v23-feed-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: .1rem .2rem .45rem;
+}
+.v23-feed-caption span { font-weight: 800; }
+.v23-feed-caption small { color: var(--muted); text-align: right; }
+.v23-life-update {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: .65rem;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: .68rem .78rem;
+  background: rgba(255,255,255,.025);
+}
+.v23-life-update.update-good { border-left: 4px solid #25c76f; }
+.v23-life-update.update-bad { border-left: 4px solid #ef5b65; }
+.v23-life-update-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+}
+.v23-life-update header { display: flex; justify-content: space-between; gap: .8rem; }
+.v23-life-update header strong { font-size: .94rem; }
+.v23-life-update header small { color: var(--muted); white-space: nowrap; }
+.v23-life-update p { margin: .22rem 0 0; color: var(--muted); font-size: .88rem; }
+.v23-social-dashboard { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 1rem 0; }
+
+@media (max-width: 760px) {
+  .v23-expansion-grid,
+  .v23-market-grid,
+  .v23-owned-grid,
+  .v23-summary-grid,
+  .v23-social-dashboard { grid-template-columns: 1fr; }
+  .v23-expansion-card { min-height: 78px; }
+  .v23-feed-caption { display: block; }
+  .v23-feed-caption small { display: block; text-align: left; margin-top: .15rem; }
+}

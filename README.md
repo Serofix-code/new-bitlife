@@ -4,59 +4,75 @@
 
 Create a character, progress through an entire lifetime, make choices, build relationships, pursue education and careers, manage money and property, experience supernatural paths, and continue the family story across generations.
 
-## Current version: 2.2.0
+## Current version: 2.3.0
 
-### Investment Expansion
+### Life updates
 
-The first expansion adds a fully simulated fictional investment market:
+Age progression now creates compact headlines inside the Life Journal. These can report:
 
-- Twelve procedurally generated companies in every life
-- Fictional company names, ticker symbols, industries, and market news
-- Share prices, volatility, risk levels, dividends, and price history
-- Buying and selling whole shares
-- Average purchase price and transaction tracking
-- Realized and unrealized gains or losses
-- Annual market movement during age progression
-- Portfolio inheritance across generations
-- Investment-specific developer controls
+- Family milestones such as first steps, school graduations, university, careers, and retirement
+- Major investment and crypto movements
+- Business profits or losses
+- Rent payments and landlord income
+- Social-media audience growth or decline
+- Fame awards, merchandise, documentaries, and public appearances
 
-### Dynamic Activities
+### Installed expansions
 
-Major Activities use variable-driven systems instead of simple one-click outcomes. Results can react to age, health, happiness, knowledge, resilience, fame, followers, finances, housing, career status, criminal history, talents, and past experience.
+#### Investment Expansion
 
-Systems include:
+- Twelve procedurally generated fictional companies per life
+- Share prices, risk, volatility, dividends, market news, and line-chart previews
+- Buying and selling shares with cost-basis tracking
+- Realized and unrealized results
+- Annual market movement and inheritance
 
-- Family building and fertility
-- Health and wellbeing
-- Social media
-- Clubs and teams
-- Licenses
-- Civil law
-- Vacations
-- Movies and nightlife
-- Fame actions
-- Pets
-- Style and appearance
-- Crime, court, prison, and fugitive states
-- Magic, vampirism, and time travel
+#### Crypto Expansion
 
-### Life simulation
+- Eight procedurally generated fictional digital assets
+- Extreme volatility, fictional market news, and price-history charts
+- Fractional-unit trading, fees, holdings, and realized results
+- Annual market movement with large rallies and crashes
+
+#### Business Expansion
+
+- Eight business types ranging from cafés to technology startups and hotels
+- Company names, employees, quality, advertising, reputation, revenue, profit, and value
+- Annual operating results
+- Improvements, hiring, marketing, and business sales
+- Up to eight owned businesses per life
+
+#### Renting & Landlord Expansion
+
+- Rent rooms, studios, apartments, houses, or luxury homes
+- Deposits, yearly rent, leases, and moving out
+- Buy income-producing flats, houses, duplexes, and apartment blocks
+- Tenants, vacancies, maintenance, renovations, appreciation, and property sales
+
+### Richer social media and fame
+
+Social Media now tracks followers, engagement, reputation, posting streaks, creator level, monetization, lifetime creator income, and best-performing posts. New activities include photo stories, podcasts, community events, and premium sponsorships.
+
+Fame now tracks public image, press mentions, awards, endorsements, and fan events. New actions include red-carpet events, fan meetings, merchandise, and documentaries.
+
+### Dynamic life simulation
 
 - Character creation with identity, appearance, location, upbringing, and talents
 - Childhood, adolescence, adulthood, old age, and mortality
 - Education, careers, promotions, retirement, and finances
 - Relationships, dating, marriage, divorce, children, and inheritance
+- Family building, contraception, medical routes, surrogacy, and adoption
 - Homes, possessions, debt, upkeep, appreciation, and depreciation
-- Country-specific cities, currencies, names, and flags
-- Multi-generation families, ribbons, challenges, and account profiles
-- Local browser saves, named slots, JSON export/import, and save migration
+- Twenty-one countries with localized cities, currencies, names, and flags
+- Crime, court, prison, appeals, parole, and fugitive states
+- Magic, vampirism, time travel, and inheritance across generations
+- Multi-user local accounts, saves, ribbons, and challenges
 - Responsive desktop and mobile layouts
-- Optional local-network phone play
-- Developer menu for testing and customization
+- Developer controls for testing and customization
 
 ## Documentation
 
-The complete game guide is available through the in-game **Game Guide & Wiki** option and the repository’s GitHub Wiki.
+The complete guide is available through the in-game **Game Guide & Wiki** option and the repository Wiki.
 
 ## Technology
 

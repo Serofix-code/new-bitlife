@@ -1,8 +1,8 @@
 (function installOfflineData(global) {
   "use strict";
   global.NextChapter.DATA_BUNDLE = {
-  "dataVersion": "1.7.0",
-  "generatedAt": "2026-07-11T20:45:53.588Z",
+  "dataVersion": "1.8.0",
+  "generatedAt": "2026-07-11T20:57:35.541Z",
   "files": [
     {
       "kind": "catalogs",

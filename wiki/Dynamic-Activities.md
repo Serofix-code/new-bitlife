@@ -1,6 +1,8 @@
 # Dynamic Activities
 
-Each activity centre has requirements, a visible estimated chance, persistent progress, and recent history.
+Activities use age locks, costs, success estimates, and persistent history.
+
+## Activity centres
 
 - Health & Mind
 - Social Media
@@ -8,10 +10,14 @@ Each activity centre has requirements, a visible estimated chance, persistent pr
 - Licences
 - Civil Law
 - Vacations
-- Movie Theater
+- Cinema
 - Nightlife
 - Fame Actions
 - Pets
 - Style & Appearance
 
-Age, stats, talents, money, fame, followers, housing, legal record, career, and prior experience modify the result. Jail blocks all outside activity centres.
+Social Media now includes photo stories, podcasts, fan community events, and premium sponsorships. Fame Actions now include red-carpet events, fan meetings, merchandise, and documentaries.
+
+Most actions consume one activity point. Age up to restore points. Prison blocks outside activity centres.
+
+For deeper creator statistics, see [Social Media and Fame](Social-Media-and-Fame).

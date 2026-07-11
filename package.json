@@ -1,6 +1,6 @@
 {
   "name": "next-chapter-life-sim",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "private": true,
   "description": "An original, offline-first browser life simulator.",
   "scripts": {

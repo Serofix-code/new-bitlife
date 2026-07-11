@@ -22,3 +22,5 @@ All companies and results are fictional. This is a game mechanic and not financi
 
 
 Each company card now includes a recent line preview so players can quickly see whether the price has been trending up or down.
+
+Large annual movements in an owned company can also appear as compact [Life Updates](Life-Updates) in the journal.

@@ -105,6 +105,7 @@ for (const relative of [
   "js/core/v19.js",
   "js/core/v20.js",
   "js/core/v21.js",
+  "js/core/v23.js",
   "js/ui/render.js",
   "js/ui/expansion-view.js",
   "js/ui/v16-view.js",
@@ -112,7 +113,8 @@ for (const relative of [
   "js/ui/v18-view.js",
   "js/ui/v19-view.js",
   "js/ui/v20-view.js",
-  "js/ui/v21-view.js"
+  "js/ui/v21-view.js",
+  "js/ui/v23-view.js"
 ]) {
   vm.runInContext(await fs.readFile(path.join(root, relative), "utf8"), context, { filename: relative });
 }
@@ -143,6 +145,7 @@ vm.runInContext(await fs.readFile(path.join(root, "js/ui/v18-app.js"), "utf8"), 
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v19-app.js"), "utf8"), context, { filename: "js/ui/v19-app.js" });
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v20-app.js"), "utf8"), context, { filename: "js/ui/v20-app.js" });
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v21-app.js"), "utf8"), context, { filename: "js/ui/v21-app.js" });
+vm.runInContext(await fs.readFile(path.join(root, "js/ui/v23-app.js"), "utf8"), context, { filename: "js/ui/v23-app.js" });
 const startupApp = new NC.AppController({ catalogs: { origins: [{ id: "test", firstNames: ["A"], lastNames: ["B"] }], upbringings: [{ id: "test" }] } }, {});
 assert.equal(startupApp.game, null);
 assert.equal(startupApp.tab, "life");
@@ -585,8 +588,87 @@ jailedInvestor.devSetAge(24);
 jailedInvestor.state.finances.cash = 100000;
 jailedInvestor.startIncarceration({ label: "Burglary", severity: "property" }, 2);
 assert.equal(jailedInvestor.investmentCanTrade(jailedInvestor.state.investment.companies[0].id, 1, "buy").allowed, false, "jail must block investment trading");
+
+// v2.3 age-up headlines, crypto, business, landlord, social, and fame checks.
+const v23Game = new NC.GameEngine(data);
+v23Game.createCharacter({ firstName: "Nova", lastName: "Builder", identity: "nonbinary", reproductiveRole: "assisted", originId: "canada", upbringingId: "bookish", occult: "human", specialTalent: "business", seed: "v23-expansions" });
+assert.equal(v23Game.state.crypto.coins.length, 8, "each life should receive eight fictional crypto assets");
+assert.throws(() => v23Game.buyCrypto(v23Game.state.crypto.coins[0].id, 1), /age 18/i, "crypto should stay age-locked");
+v23Game.devSetAge(30);
+v23Game.state.finances.cash = 10000000;
+const firstCoin = v23Game.state.crypto.coins[0];
+v23Game.buyCrypto(firstCoin.id, 10);
+assert.ok(v23Game.cryptoHolding(firstCoin.id).units >= 10);
+const cryptoBefore = firstCoin.price;
+v23Game.state.dev.cryptoAlwaysProfits = true;
+v23Game.state.year += 1;
+v23Game.advanceCryptoMarket();
+assert.ok(firstCoin.price > cryptoBefore, "crypto profit cheat should force positive movement");
+v23Game.sellCrypto(firstCoin.id, 2);
+assert.ok(v23Game.cryptoHolding(firstCoin.id).units < 10);
+const cryptoHtml = NC.View.cryptoModal({ game: v23Game, data, store, modal: { type: "v23-crypto" } });
+assert.match(cryptoHtml, /Crypto Expansion/);
+assert.match(cryptoHtml, /Market headlines/);
+
+const business = v23Game.startBusiness("cafe", "Nova Corner Café");
+assert.equal(v23Game.state.businesses.owned.length, 1);
+v23Game.state.dev.businessAlwaysProfits = true;
+const businessUpdates = v23Game.advanceBusinesses();
+assert.ok(businessUpdates[0].profit >= 0);
+v23Game.businessAction(business.id, "advertise");
+assert.ok(business.advertising > 0);
+const businessHtml = NC.View.businessModal({ game: v23Game, data, store, modal: { type: "v23-business" } });
+assert.match(businessHtml, /Business Expansion/);
+assert.match(businessHtml, /Nova Corner Café/);
+
+v23Game.rentHome("studio");
+assert.equal(v23Game.state.housing.rentalHome.typeId, "studio");
+const landlord = v23Game.buyLandlordProperty("small_flat");
+assert.equal(v23Game.state.housing.landlordProperties.length, 1);
+v23Game.state.dev.landlordAlwaysOccupied = true;
+const housingUpdates = v23Game.advanceHousing();
+assert.ok(housingUpdates.length >= 2);
+assert.ok(landlord.value > 0);
+const housingHtml = NC.View.housingModal({ game: v23Game, data, store, modal: { type: "v23-housing" } });
+assert.match(housingHtml, /Renting &amp; Landlord Expansion|Renting & Landlord Expansion/);
+assert.match(housingHtml, /Landlord properties/);
+
+v23Game.state.activityPoints = 20;
+v23Game.state.dev.alwaysActivitySuccess = true;
+v23Game.state.social.followers = 150000;
+const reputationBefore = v23Game.state.social.reputation;
+v23Game.performDynamicActivity("social", "premium_brand");
+assert.ok(v23Game.state.social.reputation >= reputationBefore);
+assert.equal(v23Game.state.social.monetized, true);
+const socialModal = NC.View.activityCenterModal({ game: v23Game, data, store, modal: { center: "social" } });
+assert.match(socialModal, /Engagement/);
+assert.match(socialModal, /Premium sponsorship/);
+const fameModal = NC.View.activityCenterModal({ game: v23Game, data, store, modal: { center: "fame" } });
+assert.match(fameModal, /Public image/);
+assert.match(fameModal, /red-carpet/i);
+
+const updateGame = new NC.GameEngine(data);
+updateGame.createCharacter({ firstName: "Update", lastName: "Tester", identity: "woman", originId: "norway", upbringingId: "bookish", seed: "age-headline-v23" });
+updateGame.devSetAge(30);
+const siblingUpdate = updateGame.state.relationships.find((person) => person.role === "sibling") || updateGame.randomPerson("sibling", { age: 5, identity: "woman" });
+if (!updateGame.state.relationships.includes(siblingUpdate)) updateGame.state.relationships.push(siblingUpdate);
+siblingUpdate.age = 5;
+updateGame.ageUp();
+assert.ok(updateGame.state.timeline.some((entry) => /graduated kindergarten/i.test(entry.title)), "age-up should create compact family milestone headlines");
+const lifeHtmlV23 = NC.View.v16Life({ game: updateGame, data, store, tab: "life" });
+assert.match(lifeHtmlV23, /Life updates/);
+assert.match(lifeHtmlV23, /graduated kindergarten/i);
+assert.ok(v23Game.netWorth() >= v23Game.cryptoPortfolioValue() + v23Game.businessPortfolioValue() + v23Game.landlordPortfolioValue() - v23Game.state.finances.debt);
+
 const guideHtml = await fs.readFile(path.join(root, "guide.html"), "utf8");
 assert.match(guideHtml, /Next Chapter Wiki/);
 assert.match(guideHtml, /Investment Expansion/);
+assert.match(guideHtml, /Crypto Expansion/);
+assert.match(guideHtml, /Business Expansion/);
+assert.match(guideHtml, /Renting &amp; Landlord Expansion|Renting & Landlord Expansion/);
+assert.match(guideHtml, /compact age-up updates/i);
+for (const wikiPage of ["Life-Updates.md", "Crypto-Expansion.md", "Business-Expansion.md", "Renting-and-Landlords.md", "Social-Media-and-Fame.md"]) {
+  await fs.access(path.join(root, "wiki", wikiPage));
+}
 
-console.log(`All tests passed: ${events.length} events, ${catalogs.jobs.length} jobs, ${catalogs.assets.length} assets, lifecycle, fertility, dynamic activities, investments, save, and inheritance checks.`);
+console.log(`All tests passed: ${events.length} events, ${catalogs.jobs.length} jobs, ${catalogs.assets.length} assets, lifecycle, fertility, dynamic activities, investments, crypto, businesses, landlords, social/fame, age-up headlines, wiki, save, and inheritance checks.`);

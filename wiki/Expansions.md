@@ -1,11 +1,14 @@
 # Expansions
 
-The **Expansions** menu contains optional deep systems that add new long-term gameplay without replacing the base life simulation.
+The **Expansions** menu contains optional deep systems that add long-term gameplay without replacing the base life simulation.
 
-## Installed
+## Installed expansions
 
 - [Investment Expansion](Investment-Expansion)
+- [Crypto Expansion](Crypto-Expansion)
+- [Business Expansion](Business-Expansion)
+- [Renting and Landlords](Renting-and-Landlords)
 
-## Possible future expansions
+Expansion assets contribute to net worth. Investments, crypto holdings, businesses, and landlord properties can pass into later generations.
 
-The menu is prepared for systems such as business ownership, landlord management, politics, astronomy, museums, zoos, or cult management. These are not included yet.
+Trading and management are normally locked until age 18. Prison blocks new trades and outside management actions, although owned assets can continue changing value during age progression.

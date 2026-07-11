@@ -1,25 +1,35 @@
 # How the Game Works
 
-## Character variables
+## Age progression
 
-Outcomes are calculated from variables rather than fixed results. Important values include age, country, city, identity, reproductive role, health, happiness, smarts, resilience, money, debt, fame, special talent, occult status, education, career, criminal record, relationships, assets, and past choices.
+Pressing **Age** advances the character by one year. The engine updates relationships, education, careers, finances, health, owned assets, investments, crypto, businesses, housing, social media, fame, and mortality before selecting the next annual event.
 
-## Life stages
+The Life Journal can show both major events and compact yearly headlines. See [Life Updates](Life-Updates).
 
-- **Ages 0–11:** childhood milestones, family, school, and simple wellbeing options.
-- **Ages 12–17:** clubs, social media, licences, hobbies, part-time work, and teen events.
-- **Age 18+:** full careers, assets, family-building, relocation, legal actions, major crime, and expansions.
-- **Prison:** outside systems are locked and replaced by jail activities.
+## Variable-driven outcomes
 
-## Events
+Most actions calculate success from character data rather than using a fixed answer. Common modifiers include:
 
-Most annual events occur only once per life. Explicitly repeatable events have cooldowns. Choices support conditions, weighted outcomes, stat changes, relationships, money, education, careers, assets, and legacy effects.
+- Age
+- Health, happiness, smarts, and resilience
+- Money and debt
+- Education and career history
+- Criminal record and incarceration
+- Special talents
+- Relationships and housing
+- Followers, engagement, reputation, and fame
+- Earlier attempts and previous results
 
-## Death and generations
+## Finances and net worth
 
-A completed life receives a ribbon. A living child can inherit the estate and continue the family. Occult traits may be inherited. Account collections remain available across unrelated lives and generations.
+Net worth includes cash, ordinary assets, company shares, fictional crypto holdings, businesses, and landlord properties, minus debt.
 
+Annual progression can create income, expenses, investment returns, business results, rent payments, landlord maintenance, and debt changes.
 
-## Countries and Cities
+## Countries and cities
 
-Next Chapter includes a growing set of real countries, local currencies, flags, and curated city lists for birthplaces, emigration, and travel.
+Next Chapter includes twenty-one countries with localized currencies, flags, name pools, and curated city lists. Birthplaces, emigration, relocation, and travel use this world catalog.
+
+## Jail override
+
+An active prison sentence replaces outside gameplay with jail-only options. External jobs, trading, business management, landlord management, and ordinary Activities remain blocked until release.

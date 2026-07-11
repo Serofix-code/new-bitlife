@@ -53,7 +53,7 @@
     const positive = company.annualChange >= 0;
     const stroke = positive ? "#22c55e" : "#ef4444";
     const fill = positive ? "rgba(34,197,94,.15)" : "rgba(239,68,68,.15)";
-    const history = company.history && company.history.length ? company.history.slice(-8) : [{ price: company.price }];
+    const history = company.history && company.history.length ? company.history.slice(0, 8).reverse() : [{ price: company.price }];
     const low = Math.min(...history.map((entry) => Number(entry.price) || 0));
     const high = Math.max(...history.map((entry) => Number(entry.price) || 0));
     return `<div class="v21-chart-card"><div class="v21-chart-head"><span>Recent performance</span><strong>${positive ? "Uptrend" : "Downtrend"}</strong></div>${investmentSparkline(history, { width: 260, height: 82, stroke, fill })}<div class="v21-chart-foot"><small>Low ${U.formatMoney(low, "$")}</small><small>High ${U.formatMoney(high, "$")}</small></div></div>`;
@@ -61,7 +61,7 @@
 
   function marketOverviewChart(state, inv) {
     const values = inv.yearlyReturns && inv.yearlyReturns.length
-      ? inv.yearlyReturns.slice(-8).map((entry, index) => ({ value: Number(entry.portfolioValue || entry.annualReturn || 0), year: entry.year || index + 1 }))
+      ? inv.yearlyReturns.slice(-8).map((entry, index) => ({ value: Number(entry.value || entry.portfolioValue || entry.annualReturn || 0), year: entry.year || index + 1 }))
       : inv.companies.slice(0, 8).map((company, index) => ({ value: Number(company.price || 0), year: index + 1 }));
     const positive = !values.length || values[values.length - 1].value >= values[0].value;
     const stroke = positive ? "#22c55e" : "#ef4444";
