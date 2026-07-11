@@ -1,0 +1,609 @@
+{
+  "kind": "events",
+  "category": "activities",
+  "events": [
+    {
+      "id": "activity_accessories",
+      "title": "A new little look",
+      "text": "You choose a small detail that makes your profile feel more like you.",
+      "icon": "🎀",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "bright",
+          "label": "Pick something bright",
+          "outcome": "The cheerful accessory becomes part of your look.",
+          "effects": {
+            "stats": {
+              "happiness": 3
+            }
+          }
+        },
+        {
+          "id": "classic",
+          "label": "Keep it simple",
+          "outcome": "The understated choice feels exactly right.",
+          "effects": {
+            "stats": {
+              "happiness": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_tummy",
+      "title": "A toy just out of reach",
+      "text": "A colourful toy waits a tiny distance away.",
+      "icon": "🧸",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "reach",
+          "label": "Reach for it",
+          "outcome": "After a determined wiggle, your fingers finally touch it.",
+          "effects": {
+            "stats": {
+              "health": 4,
+              "resilience": 3
+            }
+          }
+        },
+        {
+          "id": "reach_alt",
+          "label": "Try it a different way",
+          "outcome": "The moment unfolds a little differently, but still becomes part of your story.",
+          "effects": {
+            "stats": {
+              "health": 4,
+              "resilience": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_blocks",
+      "title": "The tallest tower possible",
+      "text": "A pile of blocks is waiting to become something important.",
+      "icon": "🧱",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "tower",
+          "label": "Build a huge tower",
+          "outcome": "It stands for three glorious seconds before collapsing.",
+          "effects": {
+            "stats": {
+              "knowledge": 3,
+              "happiness": 5
+            }
+          }
+        },
+        {
+          "id": "house",
+          "label": "Build a tiny house",
+          "outcome": "You carefully make room for every imaginary resident.",
+          "effects": {
+            "stats": {
+              "knowledge": 4,
+              "happiness": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_picture_book",
+      "title": "Again from the beginning",
+      "text": "A grown-up finishes the picture book, but you are absolutely not done with it.",
+      "icon": "📖",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "again",
+          "label": "Ask for it again",
+          "outcome": "By the third reading, you can predict every page.",
+          "effects": {
+            "stats": {
+              "knowledge": 5,
+              "happiness": 4
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 4
+            }
+          }
+        },
+        {
+          "id": "again_alt",
+          "label": "Try it a different way",
+          "outcome": "The moment unfolds a little differently, but still becomes part of your story.",
+          "effects": {
+            "stats": {
+              "knowledge": 5,
+              "happiness": 4
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_vampire_control",
+      "title": "Quieting the hunger",
+      "text": "You focus on your breathing until the pulse of every nearby heartbeat fades into the background.",
+      "icon": "🩸",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "focus",
+          "label": "Hold the meditation",
+          "outcome": "The hunger loosens its grip, and your thoughts become your own again.",
+          "effects": {
+            "stats": {
+              "resilience": 7,
+              "happiness": 3
+            }
+          }
+        },
+        {
+          "id": "focus_alt",
+          "label": "Try it a different way",
+          "outcome": "The moment unfolds a little differently, but still becomes part of your story.",
+          "effects": {
+            "stats": {
+              "resilience": 7,
+              "happiness": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_night_flight",
+      "title": "Above the sleeping streets",
+      "text": "The city looks entirely different from the rooftops after midnight.",
+      "icon": "🌙",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "rooftops",
+          "label": "Race across the rooftops",
+          "outcome": "For one hour, the night belongs completely to you.",
+          "effects": {
+            "stats": {
+              "health": 4,
+              "happiness": 8,
+              "resilience": 3
+            }
+          }
+        },
+        {
+          "id": "watch",
+          "label": "Watch the city quietly",
+          "outcome": "You notice a thousand small lives continuing below.",
+          "effects": {
+            "stats": {
+              "knowledge": 4,
+              "happiness": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_library",
+      "title": "A shelf you never noticed",
+      "text": "A display near the back of the library invites you into a subject you know almost nothing about.",
+      "icon": "📚",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "deep",
+          "label": "Follow the curiosity",
+          "outcome": "One book becomes three and the afternoon disappears.",
+          "effects": {
+            "stats": {
+              "knowledge": 7,
+              "happiness": 3
+            }
+          }
+        },
+        {
+          "id": "fiction",
+          "label": "Choose a story instead",
+          "outcome": "You return home from somewhere that never existed.",
+          "effects": {
+            "stats": {
+              "happiness": 6,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "event",
+          "label": "Join a community talk",
+          "outcome": "A thoughtful question becomes a new conversation afterward.",
+          "effects": {
+            "stats": {
+              "knowledge": 4,
+              "happiness": 3
+            },
+            "addRelationship": {
+              "role": "friend",
+              "closeness": 40
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_walk",
+      "title": "The path forks",
+      "text": "Your usual route meets a quieter path you have always meant to explore.",
+      "icon": "🥾",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "new",
+          "label": "Take the unfamiliar path",
+          "outcome": "It climbs farther than expected and ends at a remarkable view.",
+          "effects": {
+            "stats": {
+              "health": 5,
+              "happiness": 6,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "usual",
+          "label": "Stay with the familiar route",
+          "outcome": "The reliable rhythm clears your head.",
+          "effects": {
+            "stats": {
+              "health": 4,
+              "happiness": 3
+            }
+          }
+        },
+        {
+          "id": "fast",
+          "label": "Turn it into a workout",
+          "outcome": "You return tired in the satisfying way.",
+          "effects": {
+            "stats": {
+              "health": 7,
+              "happiness": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_volunteer",
+      "title": "More hands than boxes",
+      "text": "The community project is busy, cheerful, and only loosely organized.",
+      "icon": "🤝",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "organize",
+          "label": "Create a simple system",
+          "outcome": "Labels and a clear queue turn confusion into momentum.",
+          "effects": {
+            "stats": {
+              "resilience": 5,
+              "knowledge": 3,
+              "happiness": 4
+            },
+            "legacy": 2
+          }
+        },
+        {
+          "id": "people",
+          "label": "Welcome new volunteers",
+          "outcome": "Nobody stands alone for long, including you.",
+          "effects": {
+            "stats": {
+              "happiness": 6
+            },
+            "addRelationship": {
+              "role": "friend",
+              "closeness": 47
+            },
+            "legacy": 2
+          }
+        },
+        {
+          "id": "labor",
+          "label": "Take on the physical work",
+          "outcome": "The stack shrinks steadily under determined hands.",
+          "effects": {
+            "stats": {
+              "health": 4,
+              "resilience": 4
+            },
+            "legacy": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_course",
+      "title": "The beginner's table",
+      "text": "The short course begins with everyone admitting what they do not know yet.",
+      "icon": "🧠",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "technical",
+          "label": "Choose a practical skill",
+          "outcome": "By the end, you can make something that works.",
+          "effects": {
+            "stats": {
+              "knowledge": 8,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "creative",
+          "label": "Choose a creative skill",
+          "outcome": "Your first attempt is imperfect, personal, and finished.",
+          "effects": {
+            "stats": {
+              "knowledge": 4,
+              "happiness": 7
+            }
+          }
+        },
+        {
+          "id": "social",
+          "label": "Choose a discussion workshop",
+          "outcome": "Listening well proves to be its own demanding skill.",
+          "effects": {
+            "stats": {
+              "resilience": 5,
+              "happiness": 3
+            },
+            "addRelationship": {
+              "role": "friend",
+              "closeness": 42
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_trip",
+      "title": "One day, somewhere else",
+      "text": "A nearby place offers three ways to spend your brief escape from routine.",
+      "icon": "🗺️",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "museum",
+          "label": "Explore the local museum",
+          "outcome": "A small exhibition changes how you see an ordinary object.",
+          "effects": {
+            "stats": {
+              "knowledge": 6,
+              "happiness": 4
+            }
+          }
+        },
+        {
+          "id": "food",
+          "label": "Follow the food stalls",
+          "outcome": "Lunch becomes the destination, and nobody regrets it.",
+          "effects": {
+            "stats": {
+              "happiness": 8,
+              "health": -1
+            }
+          }
+        },
+        {
+          "id": "wander",
+          "label": "Walk without a plan",
+          "outcome": "You find a quiet square no guide mentioned.",
+          "effects": {
+            "stats": {
+              "health": 3,
+              "happiness": 6,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_fitness",
+      "title": "The final five minutes",
+      "text": "The instructor promises the hardest section is nearly over. The clock has other ideas.",
+      "icon": "🏃",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "pace",
+          "label": "Keep a sustainable pace",
+          "outcome": "You finish strong enough to smile afterward.",
+          "effects": {
+            "stats": {
+              "health": 7,
+              "happiness": 3,
+              "resilience": 3
+            }
+          }
+        },
+        {
+          "id": "push",
+          "label": "Give the last burst everything",
+          "outcome": "You surprise yourself, then spend a while becoming friends with the floor.",
+          "effects": {
+            "stats": {
+              "health": 5,
+              "happiness": 5,
+              "resilience": 5
+            }
+          }
+        },
+        {
+          "id": "stretch",
+          "label": "Switch to stretching",
+          "outcome": "Listening to your body turns out to be the wiser challenge.",
+          "effects": {
+            "stats": {
+              "health": 5,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_social",
+      "title": "The game on the table",
+      "text": "The evening needs one decision: cooperative teamwork, friendly competition, or stories without rules.",
+      "icon": "🎲",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "team",
+          "label": "Choose a cooperative game",
+          "outcome": "The group saves the imaginary world with seconds to spare.",
+          "effects": {
+            "stats": {
+              "happiness": 7
+            },
+            "relationship": {
+              "role": "random",
+              "amount": 5
+            }
+          }
+        },
+        {
+          "id": "compete",
+          "label": "Choose something competitive",
+          "outcome": "A dramatic final move earns cheers and one playful accusation.",
+          "effects": {
+            "stats": {
+              "happiness": 6,
+              "resilience": 3
+            },
+            "relationship": {
+              "role": "friend",
+              "amount": 2
+            }
+          }
+        },
+        {
+          "id": "talk",
+          "label": "Put the game away and talk",
+          "outcome": "The conversation becomes more memorable than any score.",
+          "effects": {
+            "stats": {
+              "happiness": 8
+            },
+            "relationship": {
+              "role": "random",
+              "amount": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_checkup",
+      "title": "The sensible appointment",
+      "text": "The clinician reviews your habits and asks which part of your health you most want to improve.",
+      "icon": "🩺",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "sleep",
+          "label": "Focus on sleep",
+          "outcome": "A realistic evening routine starts to make mornings gentler.",
+          "effects": {
+            "stats": {
+              "health": 8,
+              "happiness": 4
+            }
+          }
+        },
+        {
+          "id": "movement",
+          "label": "Focus on movement",
+          "outcome": "You leave with a simple plan that does not require becoming a different person.",
+          "effects": {
+            "stats": {
+              "health": 9,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "stress",
+          "label": "Focus on stress",
+          "outcome": "Naming the pressure makes it easier to change how you carry it.",
+          "effects": {
+            "stats": {
+              "health": 5,
+              "happiness": 6,
+              "resilience": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_reflect",
+      "title": "A quiet page",
+      "text": "With no audience and no deadline, the page can hold whichever part of your life needs attention.",
+      "icon": "✍️",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "gratitude",
+          "label": "Notice what went well",
+          "outcome": "Several ordinary good things become visible again.",
+          "effects": {
+            "stats": {
+              "happiness": 7,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "problem",
+          "label": "Untangle a problem",
+          "outcome": "The problem remains, but now it has edges and a possible first step.",
+          "effects": {
+            "stats": {
+              "knowledge": 3,
+              "resilience": 6,
+              "happiness": 2
+            }
+          }
+        },
+        {
+          "id": "future",
+          "label": "Write to your future self",
+          "outcome": "The letter asks for patience, courage, and a surprisingly specific snack.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "resilience": 4
+            },
+            "legacy": 1
+          }
+        }
+      ]
+    }
+  ]
+}

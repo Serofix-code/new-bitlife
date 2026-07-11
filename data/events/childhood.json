@@ -1,0 +1,528 @@
+{
+  "kind": "events",
+  "category": "childhood",
+  "events": [
+    {
+      "id": "baby_first_laugh",
+      "title": "The laugh that surprises everyone",
+      "text": "At exactly the wrong moment, you burst into your first uncontrollable laugh.",
+      "icon": "👶",
+      "minAge": 1,
+      "maxAge": 1,
+      "weight": 30,
+      "once": true,
+      "choices": [
+        {
+          "id": "again",
+          "label": "Laugh even harder",
+          "outcome": "Your family spends the next hour trying to make you do it again.",
+          "effects": {
+            "stats": {
+              "happiness": 8
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 7
+            }
+          }
+        },
+        {
+          "id": "again_alt",
+          "label": "Try it a different way",
+          "outcome": "The moment unfolds a little differently, but still becomes part of your story.",
+          "effects": {
+            "stats": {
+              "happiness": 8
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 7
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "toddler_first_words",
+      "title": "A very important announcement",
+      "text": "You point across the room and attempt a brand-new sentence. Everyone stops to listen.",
+      "icon": "🗣️",
+      "minAge": 2,
+      "maxAge": 2,
+      "weight": 30,
+      "once": true,
+      "choices": [
+        {
+          "id": "clear",
+          "label": "Say it proudly",
+          "outcome": "The sentence is not perfect, but the meaning is unmistakable.",
+          "effects": {
+            "stats": {
+              "knowledge": 6,
+              "happiness": 5
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 5
+            }
+          }
+        },
+        {
+          "id": "clear_alt",
+          "label": "Try it a different way",
+          "outcome": "The moment unfolds a little differently, but still becomes part of your story.",
+          "effects": {
+            "stats": {
+              "knowledge": 6,
+              "happiness": 5
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "toddler_diaper_disaster",
+      "title": "The legendary diaper blowout",
+      "text": "During a perfectly ordinary outing, your diaper creates a spectacular laundry emergency.",
+      "icon": "🧷",
+      "minAge": 3,
+      "maxAge": 3,
+      "weight": 25,
+      "once": true,
+      "choices": [
+        {
+          "id": "giggle",
+          "label": "Find the chaos hilarious",
+          "outcome": "You giggle while a parent performs the fastest emergency change of their life.",
+          "effects": {
+            "stats": {
+              "happiness": 6
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 2
+            }
+          }
+        },
+        {
+          "id": "upset",
+          "label": "Cry about the whole disaster",
+          "outcome": "A parent comforts you, cleans everything up, and promises the day is not ruined.",
+          "effects": {
+            "stats": {
+              "happiness": 2
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 6
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "preschool_paint",
+      "title": "Paint everywhere except the paper",
+      "text": "At preschool, your art project escapes the page and reaches your hands, sleeves, and one unfortunate chair.",
+      "icon": "🎨",
+      "minAge": 3,
+      "maxAge": 4,
+      "weight": 24,
+      "cooldown": 2,
+      "choices": [
+        {
+          "id": "masterpiece",
+          "label": "Call it a masterpiece",
+          "outcome": "You proudly explain that the chair is part of the artwork.",
+          "effects": {
+            "stats": {
+              "happiness": 7,
+              "knowledge": 2
+            }
+          }
+        },
+        {
+          "id": "help",
+          "label": "Help clean it up",
+          "outcome": "The teacher calls you a responsible {noun}, even though the chair remains faintly blue.",
+          "effects": {
+            "stats": {
+              "resilience": 4,
+              "knowledge": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_blanket_fort",
+      "title": "A kingdom under the table",
+      "text": "A rainy afternoon turns the living room into an unexplored kingdom of blankets and chairs.",
+      "icon": "⛺",
+      "minAge": 3,
+      "maxAge": 10,
+      "weight": 7,
+      "cooldown": 5,
+      "choices": [
+        {
+          "id": "build",
+          "label": "Build the grandest fort",
+          "outcome": "By sunset, your fortress has three rooms and a strict snack policy.",
+          "effects": {
+            "stats": {
+              "happiness": 7,
+              "knowledge": 2
+            },
+            "relationship": {
+              "role": "sibling",
+              "amount": 4
+            }
+          }
+        },
+        {
+          "id": "read",
+          "label": "Make it a secret reading den",
+          "outcome": "The rain fades behind pages and torchlight.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "knowledge": 5
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_playground_dispute",
+      "title": "The last swing",
+      "text": "Another child insists the last free swing belongs to them. They look just as determined as you feel.",
+      "icon": "🛝",
+      "minAge": 5,
+      "maxAge": 11,
+      "weight": 8,
+      "cooldown": 4,
+      "choices": [
+        {
+          "id": "share",
+          "label": "Suggest taking turns",
+          "outcome": "The compromise works, and neither of you has to summon a grown-up.",
+          "effects": {
+            "stats": {
+              "happiness": 3,
+              "resilience": 2
+            },
+            "addRelationship": {
+              "role": "friend",
+              "closeness": 48
+            }
+          }
+        },
+        {
+          "id": "walk",
+          "label": "Find something else to do",
+          "outcome": "You discover the climbing frame is more fun anyway.",
+          "effects": {
+            "stats": {
+              "resilience": 4,
+              "happiness": 1
+            }
+          }
+        },
+        {
+          "id": "argue",
+          "label": "Stand your ground",
+          "outcome": "The argument ends with both of you sent to opposite benches.",
+          "effects": {
+            "stats": {
+              "happiness": -5,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_found_coin",
+      "title": "A coin on the pavement",
+      "text": "Something glints near the curb: a coin, muddy but unmistakably real.",
+      "icon": "🪙",
+      "minAge": 5,
+      "maxAge": 13,
+      "weight": 6,
+      "cooldown": 6,
+      "choices": [
+        {
+          "id": "keep",
+          "label": "Put it in your pocket",
+          "outcome": "Your first tiny windfall feels enormous.",
+          "effects": {
+            "cash": 10,
+            "stats": {
+              "happiness": 2
+            }
+          }
+        },
+        {
+          "id": "ask",
+          "label": "Ask nearby adults",
+          "outcome": "Nobody claims it, but a parent notices your honesty.",
+          "effects": {
+            "stats": {
+              "resilience": 3
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 6
+            }
+          }
+        },
+        {
+          "id": "donate",
+          "label": "Add it to a donation jar",
+          "outcome": "It is not much, yet giving it away feels surprisingly good.",
+          "effects": {
+            "stats": {
+              "happiness": 5,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_storm_night",
+      "title": "Thunder after bedtime",
+      "text": "A bright flash fills your room, followed by a crack that rattles the window.",
+      "icon": "⛈️",
+      "minAge": 2,
+      "maxAge": 9,
+      "weight": 6,
+      "cooldown": 5,
+      "choices": [
+        {
+          "id": "parents",
+          "label": "Find your family",
+          "outcome": "Someone makes warm drinks and counts the seconds between flashes with you.",
+          "effects": {
+            "stats": {
+              "happiness": 4
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 5
+            }
+          }
+        },
+        {
+          "id": "brave",
+          "label": "Watch from the window",
+          "outcome": "Fear gives way to awe as the storm rolls across the sky.",
+          "effects": {
+            "stats": {
+              "resilience": 6,
+              "knowledge": 2,
+              "health": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_seed_project",
+      "title": "A seed in a paper cup",
+      "text": "You bring home a tiny planted seed and strict instructions to keep it alive.",
+      "icon": "🌱",
+      "minAge": 6,
+      "maxAge": 12,
+      "weight": 6,
+      "once": true,
+      "choices": [
+        {
+          "id": "care",
+          "label": "Check it every morning",
+          "outcome": "A green shoot appears. It feels like a small miracle you helped arrange.",
+          "effects": {
+            "stats": {
+              "knowledge": 5,
+              "happiness": 4
+            },
+            "flags": {
+              "grew_first_plant": true
+            }
+          }
+        },
+        {
+          "id": "experiment",
+          "label": "Try a sunlight experiment",
+          "outcome": "Your notes are excellent; the plant is less impressed.",
+          "effects": {
+            "stats": {
+              "knowledge": 7,
+              "happiness": -2
+            }
+          }
+        },
+        {
+          "id": "forget",
+          "label": "Leave it on the windowsill",
+          "outcome": "The lesson becomes one about remembering responsibilities.",
+          "effects": {
+            "stats": {
+              "happiness": -3,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_family_recipe",
+      "title": "The flour cloud",
+      "text": "A family recipe is being prepared, and the kitchen needs a very junior assistant.",
+      "icon": "🥣",
+      "minAge": 6,
+      "maxAge": 14,
+      "weight": 5,
+      "cooldown": 7,
+      "conditions": {
+        "relationshipRole": "parent"
+      },
+      "choices": [
+        {
+          "id": "help",
+          "label": "Measure everything carefully",
+          "outcome": "The result is delicious, apart from one suspiciously salty corner.",
+          "effects": {
+            "stats": {
+              "knowledge": 3,
+              "happiness": 5
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 6
+            }
+          }
+        },
+        {
+          "id": "taste",
+          "label": "Volunteer as chief taster",
+          "outcome": "Your quality-control standards are extremely thorough.",
+          "effects": {
+            "stats": {
+              "happiness": 6,
+              "health": -1
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_new_sibling",
+      "title": "Room for one more",
+      "text": "Your family is welcoming a new baby. The household suddenly runs on whispers and very little sleep.",
+      "icon": "🍼",
+      "minAge": 2,
+      "maxAge": 12,
+      "weight": 3,
+      "once": true,
+      "conditions": {
+        "flagsNone": [
+          "new_sibling_arrived"
+        ]
+      },
+      "choices": [
+        {
+          "id": "welcome",
+          "label": "Become the official helper",
+          "outcome": "You learn that tiny socks can vanish even before anyone wears them.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "resilience": 3
+            },
+            "addRelationship": {
+              "role": "sibling",
+              "closeness": 60,
+              "ageOffset": -1
+            },
+            "flags": {
+              "new_sibling_arrived": true
+            }
+          }
+        },
+        {
+          "id": "space",
+          "label": "Keep to your own corner",
+          "outcome": "You need time to get used to sharing the spotlight.",
+          "effects": {
+            "stats": {
+              "happiness": -3,
+              "resilience": 2
+            },
+            "addRelationship": {
+              "role": "sibling",
+              "closeness": 38,
+              "ageOffset": -1
+            },
+            "flags": {
+              "new_sibling_arrived": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "child_first_stage",
+      "title": "Your name on the program",
+      "text": "The class show needs one more person on stage. Every face seems to turn toward you.",
+      "icon": "🎭",
+      "minAge": 7,
+      "maxAge": 13,
+      "weight": 5,
+      "cooldown": 6,
+      "choices": [
+        {
+          "id": "perform",
+          "label": "Step into the spotlight",
+          "outcome": "Your knees shake, but the applause is real.",
+          "effects": {
+            "stats": {
+              "resilience": 6,
+              "happiness": 5
+            }
+          }
+        },
+        {
+          "id": "backstage",
+          "label": "Help backstage instead",
+          "outcome": "The props arrive on cue, largely because of you.",
+          "effects": {
+            "stats": {
+              "knowledge": 4,
+              "resilience": 3
+            }
+          }
+        },
+        {
+          "id": "decline",
+          "label": "Politely decline",
+          "outcome": "Relief wins today, though you wonder what it might have been like.",
+          "effects": {
+            "stats": {
+              "happiness": 1,
+              "resilience": -2
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

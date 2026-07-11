@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10141b">
+  <meta name="description" content="Next Chapter — an original, offline-first browser life simulator.">
+  <title>Next Chapter — Life Simulator</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <noscript>
+    <div class="noscript">Next Chapter needs JavaScript enabled to run.</div>
+  </noscript>
+
+  <div id="app" class="app" aria-live="polite">
+    <div class="boot-screen">
+      <img src="assets/mark.svg" alt="" width="72" height="72">
+      <p>Opening your next chapter…</p>
+    </div>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-stack" aria-live="assertive" aria-atomic="true"></div>
+  <input id="import-file" class="sr-only" type="file" accept="application/json,.json">
+
+  <!-- Classic scripts are intentional: they work when index.html is opened through file://. -->
+  <script defer src="js/core/namespace.js"></script>
+  <script defer src="js/data.bundle.js"></script>
+  <script defer src="js/core/utils.js"></script>
+  <script defer src="js/core/data-loader.js"></script>
+  <script defer src="js/core/storage.js"></script>
+  <script defer src="js/core/events.js"></script>
+  <script defer src="js/core/game.js"></script>
+  <script defer src="js/core/expansion.js"></script>
+  <script defer src="js/ui/render.js"></script>
+  <script defer src="js/ui/expansion-view.js"></script>
+  <script defer src="js/ui/app.js"></script>
+  <script defer src="js/ui/expansion-app.js"></script>
+  <script defer src="js/core/v16.js"></script>
+  <script defer src="js/core/v17.js"></script>
+  <script defer src="js/core/v18.js"></script>
+  <script defer src="js/core/v19.js"></script>
+  <script defer src="js/core/v20.js"></script>
+  <script defer src="js/core/v21.js"></script>
+  <script defer src="js/ui/v16-view.js"></script>
+  <script defer src="js/ui/v17-view.js"></script>
+  <script defer src="js/ui/v18-view.js"></script>
+  <script defer src="js/ui/v19-view.js"></script>
+  <script defer src="js/ui/v20-view.js"></script>
+  <script defer src="js/ui/v21-view.js"></script>
+  <script defer src="js/ui/v16-app.js"></script>
+  <script defer src="js/ui/v17-app.js"></script>
+  <script defer src="js/ui/v18-app.js"></script>
+  <script defer src="js/ui/v19-app.js"></script>
+  <script defer src="js/ui/v20-app.js"></script>
+  <script defer src="js/ui/v21-app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    }
+  </script>
+</body>
+</html>

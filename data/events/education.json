@@ -1,0 +1,133 @@
+{
+  "kind": "events",
+  "category": "education",
+  "events": [
+    {
+      "id": "school_group_project",
+      "title": "Four people, one poster",
+      "text": "Your group project has plenty of opinions and no actual plan. The deadline is getting close.",
+      "icon": "📌",
+      "minAge": 9,
+      "maxAge": 22,
+      "weight": 8,
+      "cooldown": 4,
+      "conditions": { "educationActive": true },
+      "choices": [
+        { "id": "lead", "label": "Make a plan and delegate", "outcome": "The project comes together, though you do more than your fair share.", "effects": { "stats": { "knowledge": 4, "resilience": 3, "happiness": -2 }, "educationPerformance": 6 } },
+        { "id": "mediate", "label": "Get everyone heard", "outcome": "It takes longer, but the final work belongs to the whole group.", "effects": { "stats": { "happiness": 2, "resilience": 4 }, "educationPerformance": 4, "addRelationship": { "role": "friend", "closeness": 44 } } },
+        { "id": "minimum", "label": "Do only your section", "outcome": "Your part is solid. The poster as a whole has… character.", "effects": { "stats": { "happiness": 2 }, "educationPerformance": -3 } }
+      ]
+    },
+    {
+      "id": "school_exam_week",
+      "title": "The crowded exam calendar",
+      "text": "Three important tests have landed in the same week, along with everything else in your life.",
+      "icon": "📝",
+      "minAge": 11,
+      "maxAge": 30,
+      "weight": 7,
+      "cooldown": 3,
+      "conditions": { "educationActive": true },
+      "choices": [
+        { "id": "schedule", "label": "Build a realistic study plan", "outcome": "The plan survives contact with reality surprisingly well.", "effects": { "stats": { "knowledge": 6, "resilience": 3, "happiness": -2 }, "educationPerformance": 7 } },
+        { "id": "cram", "label": "Cram through the nights", "outcome": "You remember enough answers, and almost none of the week itself.", "effects": { "stats": { "knowledge": 4, "health": -7, "happiness": -4 }, "educationPerformance": 4 } },
+        { "id": "accept", "label": "Do what you can and rest", "outcome": "The scores are mixed, but you still feel like yourself afterward.", "effects": { "stats": { "health": 3, "resilience": 2 }, "educationPerformance": -2 } }
+      ]
+    },
+    {
+      "id": "school_club_fair",
+      "title": "Tables full of possibilities",
+      "text": "The club fair fills the hall with handmade signs, demonstrations, and enthusiastic invitations.",
+      "icon": "🎪",
+      "minAge": 10,
+      "maxAge": 24,
+      "weight": 5,
+      "once": true,
+      "conditions": { "educationActive": true },
+      "choices": [
+        { "id": "debate", "label": "Try the speaking club", "outcome": "You discover that a good question can be stronger than a loud answer.", "effects": { "stats": { "resilience": 6, "knowledge": 3 }, "flags": { "club_speaking": true } } },
+        { "id": "makers", "label": "Join the makers' table", "outcome": "By the end of the hour, your hands are dusty and your head is full of ideas.", "effects": { "stats": { "knowledge": 6, "happiness": 3 }, "flags": { "club_makers": true } } },
+        { "id": "garden", "label": "Help with the garden group", "outcome": "The work is quiet, steady, and oddly satisfying.", "effects": { "stats": { "health": 3, "happiness": 5 }, "flags": { "club_garden": true } } }
+      ]
+    },
+    {
+      "id": "school_teacher_notice",
+      "title": "A note after class",
+      "text": "A teacher asks you to stay behind—not for trouble, but because they think you could aim higher.",
+      "icon": "💡",
+      "minAge": 10,
+      "maxAge": 22,
+      "weight": 5,
+      "cooldown": 6,
+      "conditions": { "educationActive": true, "statsMin": { "knowledge": 55 } },
+      "choices": [
+        { "id": "challenge", "label": "Take on the extra challenge", "outcome": "The work is difficult in exactly the right way.", "effects": { "stats": { "knowledge": 7, "happiness": 2 }, "educationPerformance": 7 } },
+        { "id": "balance", "label": "Protect your free time", "outcome": "You appreciate the confidence, but choose a pace you can sustain.", "effects": { "stats": { "resilience": 4, "happiness": 4 }, "educationPerformance": 1 } }
+      ]
+    },
+    {
+      "id": "school_missed_deadline",
+      "title": "The date you circled wrong",
+      "text": "A major assignment was due yesterday, not next week. Your nearly empty document confirms the problem.",
+      "icon": "⏰",
+      "minAge": 12,
+      "maxAge": 32,
+      "weight": 5,
+      "cooldown": 5,
+      "conditions": { "educationActive": true },
+      "choices": [
+        { "id": "honest", "label": "Own the mistake and ask for time", "outcome": "You lose some marks, but gain a second chance.", "effects": { "stats": { "resilience": 5, "happiness": -2 }, "educationPerformance": -3 } },
+        { "id": "rush", "label": "Submit a frantic first draft", "outcome": "It has a beginning, an ending, and several paragraphs that disagree with each other.", "effects": { "stats": { "health": -4, "happiness": -3 }, "educationPerformance": -5 } },
+        { "id": "excuse", "label": "Invent a technical disaster", "outcome": "The story works, but now you need to remember every detail of it.", "effects": { "stats": { "happiness": 1, "resilience": -4 }, "educationPerformance": -2, "flags": { "told_deadline_excuse": true } } }
+      ]
+    },
+    {
+      "id": "college_fee_gap",
+      "title": "The tuition gap",
+      "text": "A grant covers less than expected, leaving a sharp hole in this year's study budget.",
+      "icon": "🧾",
+      "minAge": 18,
+      "maxAge": 40,
+      "weight": 4,
+      "cooldown": 5,
+      "conditions": { "educationProgramIn": ["college", "graduate"] },
+      "choices": [
+        { "id": "work", "label": "Take extra paid shifts", "outcome": "Your calendar becomes a puzzle with very little blank space.", "effects": { "cash": 1800, "stats": { "health": -5, "happiness": -3, "resilience": 4 }, "educationPerformance": -2 } },
+        { "id": "loan", "label": "Use a student loan", "outcome": "The immediate pressure eases, and future-you receives an IOU.", "effects": { "debt": 5000, "stats": { "happiness": 2 }, "educationPerformance": 2 } },
+        { "id": "appeal", "label": "Appeal the funding decision", "outcome": "A careful application earns a small additional award.", "effects": { "cash": 2400, "stats": { "knowledge": 2, "resilience": 3 } } }
+      ]
+    },
+    {
+      "id": "trade_real_problem",
+      "title": "The fault no one can find",
+      "text": "A training rig keeps failing in an unusual way. Even the instructor pauses to think.",
+      "icon": "🔧",
+      "minAge": 18,
+      "maxAge": 35,
+      "weight": 5,
+      "cooldown": 4,
+      "conditions": { "educationProgramIn": ["trade"] },
+      "choices": [
+        { "id": "method", "label": "Test one possibility at a time", "outcome": "Your patient process exposes a tiny, hidden fault.", "effects": { "stats": { "knowledge": 7, "resilience": 4 }, "educationPerformance": 8 } },
+        { "id": "team", "label": "Pull the group together", "outcome": "Different observations finally connect into an answer.", "effects": { "stats": { "knowledge": 4, "happiness": 3 }, "educationPerformance": 5, "addRelationship": { "role": "friend", "closeness": 42 } } },
+        { "id": "guess", "label": "Try the most likely fix", "outcome": "It works briefly, which is not quite the same as working.", "effects": { "stats": { "happiness": -2 }, "educationPerformance": -4 } }
+      ]
+    },
+    {
+      "id": "study_public_presentation",
+      "title": "The room beyond your notes",
+      "text": "You must present your work to a room full of people who may ask difficult questions.",
+      "icon": "🎤",
+      "minAge": 14,
+      "maxAge": 35,
+      "weight": 5,
+      "cooldown": 4,
+      "conditions": { "educationActive": true },
+      "choices": [
+        { "id": "practice", "label": "Practice until the opening feels natural", "outcome": "The questions still surprise you, but you know the material well enough to adapt.", "effects": { "stats": { "knowledge": 4, "resilience": 6 }, "educationPerformance": 6 } },
+        { "id": "improvise", "label": "Trust yourself in the moment", "outcome": "A few sentences wander, yet your enthusiasm carries the room.", "effects": { "stats": { "happiness": 3, "resilience": 3 }, "educationPerformance": 1 } },
+        { "id": "avoid", "label": "Ask to submit a recording", "outcome": "The recording is clear, though the avoided room lingers in your thoughts.", "effects": { "stats": { "happiness": 1, "resilience": -3 }, "educationPerformance": 2 } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "kind": "events",
+  "category": "expanded-life",
+  "events": [
+    {
+      "id": "childhood_lost_mitten",
+      "title": "The missing mitten",
+      "text": "A favourite mitten vanishes somewhere between home and the street.",
+      "icon": "🧤",
+      "minAge": 3,
+      "maxAge": 7,
+      "weight": 6,
+      "choices": [
+        {
+          "id": "search",
+          "label": "Search everywhere",
+          "outcome": "You search patiently and find it tucked behind a bench.",
+          "effects": {
+            "stats": {
+              "resilience": 2,
+              "happiness": 2
+            }
+          }
+        },
+        {
+          "id": "replace",
+          "label": "Accept a replacement",
+          "outcome": "You choose a new pair and decide the mystery can remain unsolved.",
+          "effects": {
+            "stats": {
+              "happiness": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "childhood_secret_club",
+      "title": "A secret club",
+      "text": "A few children invite you to join a club with a very serious password.",
+      "icon": "🗝️",
+      "minAge": 6,
+      "maxAge": 11,
+      "weight": 5,
+      "choices": [
+        {
+          "id": "join",
+          "label": "Join the club",
+          "outcome": "You memorise the password and spend the afternoon inventing rules.",
+          "effects": {
+            "stats": {
+              "happiness": 3,
+              "resilience": 1
+            }
+          }
+        },
+        {
+          "id": "decline",
+          "label": "Do your own thing",
+          "outcome": "You politely decline and enjoy a quiet afternoon instead.",
+          "effects": {
+            "stats": {
+              "knowledge": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "childhood_school_project",
+      "title": "A project with glitter everywhere",
+      "text": "Your class starts a project that somehow covers every surface in glitter.",
+      "icon": "✨",
+      "minAge": 7,
+      "maxAge": 12,
+      "weight": 5,
+      "conditions": {
+        "educationActive": true
+      },
+      "choices": [
+        {
+          "id": "careful",
+          "label": "Make a careful project",
+          "outcome": "Your project is tidy, detailed, and surprisingly glitter-resistant.",
+          "effects": {
+            "educationPerformance": 3,
+            "stats": {
+              "knowledge": 2
+            }
+          }
+        },
+        {
+          "id": "wild",
+          "label": "Use absolutely all the glitter",
+          "outcome": "The result is chaotic, bright, and impossible to ignore.",
+          "effects": {
+            "stats": {
+              "happiness": 4
+            },
+            "educationPerformance": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "teen_first_independent_trip",
+      "title": "Your first independent trip",
+      "text": "You are trusted to travel across town without an adult.",
+      "icon": "🚌",
+      "minAge": 12,
+      "maxAge": 16,
+      "weight": 5,
+      "choices": [
+        {
+          "id": "plan",
+          "label": "Plan the route carefully",
+          "outcome": "You arrive on time and feel more independent than before.",
+          "effects": {
+            "stats": {
+              "resilience": 3,
+              "knowledge": 1
+            }
+          }
+        },
+        {
+          "id": "wander",
+          "label": "Explore as you go",
+          "outcome": "You take a wrong turn, discover a new place, and still make it home.",
+          "effects": {
+            "stats": {
+              "happiness": 3,
+              "resilience": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "teen_online_creation",
+      "title": "Something you made gets noticed",
+      "text": "A small creative project you shared online begins receiving kind comments.",
+      "icon": "💻",
+      "minAge": 13,
+      "maxAge": 19,
+      "weight": 4,
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Keep creating",
+          "outcome": "You keep improving it and gain confidence in your own ideas.",
+          "effects": {
+            "stats": {
+              "knowledge": 2,
+              "happiness": 3
+            },
+            "flags": {
+              "creative_project": true
+            }
+          }
+        },
+        {
+          "id": "private",
+          "label": "Keep future work private",
+          "outcome": "You appreciate the attention but decide to create for yourself.",
+          "effects": {
+            "stats": {
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "teen_exam_pressure",
+      "title": "A difficult week of exams",
+      "text": "Several deadlines arrive at once and everyone seems tense.",
+      "icon": "📝",
+      "minAge": 14,
+      "maxAge": 20,
+      "weight": 5,
+      "conditions": {
+        "educationActive": true
+      },
+      "choices": [
+        {
+          "id": "schedule",
+          "label": "Make a study schedule",
+          "outcome": "The plan helps you finish the week feeling prepared.",
+          "effects": {
+            "educationPerformance": 5,
+            "stats": {
+              "knowledge": 2,
+              "happiness": -1
+            }
+          }
+        },
+        {
+          "id": "rest",
+          "label": "Protect your sleep",
+          "outcome": "You rest properly and handle the exams with a clearer head.",
+          "effects": {
+            "stats": {
+              "health": 3,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "young_adult_roommate",
+      "title": "A possible roommate",
+      "text": "Someone offers to split housing costs and share a home.",
+      "icon": "🛋️",
+      "minAge": 18,
+      "maxAge": 32,
+      "weight": 4,
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Try living together",
+          "outcome": "The arrangement saves money and adds new routines to your life.",
+          "effects": {
+            "cash": 900,
+            "stats": {
+              "happiness": 1
+            }
+          }
+        },
+        {
+          "id": "decline",
+          "label": "Keep your own space",
+          "outcome": "You decide that privacy is worth the extra expense.",
+          "effects": {
+            "cash": -300,
+            "stats": {
+              "resilience": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "adult_neighbour_kindness",
+      "title": "A neighbour needs a hand",
+      "text": "A neighbour asks for help carrying groceries and fixing a small household problem.",
+      "icon": "🏘️",
+      "minAge": 18,
+      "maxAge": 75,
+      "weight": 5,
+      "choices": [
+        {
+          "id": "help",
+          "label": "Help them",
+          "outcome": "The task takes an hour and turns into a warm conversation.",
+          "effects": {
+            "stats": {
+              "happiness": 3,
+              "resilience": 1
+            },
+            "legacy": 1
+          }
+        },
+        {
+          "id": "busy",
+          "label": "Apologise and decline",
+          "outcome": "You are honest that you do not have the energy today.",
+          "effects": {
+            "stats": {
+              "health": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "adult_unexpected_refund",
+      "title": "An unexpected refund",
+      "text": "A company corrects an old billing error and sends money back to you.",
+      "icon": "🧾",
+      "minAge": 18,
+      "maxAge": 80,
+      "weight": 3,
+      "choices": [
+        {
+          "id": "save",
+          "label": "Save it",
+          "outcome": "You place the refund safely into your balance.",
+          "effects": {
+            "cash": 650,
+            "stats": {
+              "resilience": 1
+            }
+          }
+        },
+        {
+          "id": "treat",
+          "label": "Use it for something cheerful",
+          "outcome": "You spend part of it on a pleasant day out.",
+          "effects": {
+            "cash": 250,
+            "stats": {
+              "happiness": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "adult_reunion",
+      "title": "An old acquaintance writes",
+      "text": "Someone from an earlier chapter of your life sends a thoughtful message.",
+      "icon": "💌",
+      "minAge": 24,
+      "maxAge": 70,
+      "weight": 4,
+      "choices": [
+        {
+          "id": "reply",
+          "label": "Write back",
+          "outcome": "The conversation feels easy despite the years between you.",
+          "effects": {
+            "stats": {
+              "happiness": 3
+            }
+          }
+        },
+        {
+          "id": "leave",
+          "label": "Leave the past where it is",
+          "outcome": "You appreciate the message but choose not to reopen that chapter.",
+          "effects": {
+            "stats": {
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "adult_hobby_showcase",
+      "title": "A local showcase",
+      "text": "A community event invites people to share hobbies, collections, and personal projects.",
+      "icon": "🎨",
+      "minAge": 20,
+      "maxAge": 75,
+      "weight": 4,
+      "choices": [
+        {
+          "id": "share",
+          "label": "Share something you made",
+          "outcome": "People respond warmly and you leave with fresh motivation.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "knowledge": 2
+            }
+          }
+        },
+        {
+          "id": "visit",
+          "label": "Attend as a visitor",
+          "outcome": "You spend the afternoon discovering what other people create.",
+          "effects": {
+            "stats": {
+              "knowledge": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "adult_family_recipe",
+      "title": "A recipe worth preserving",
+      "text": "A family recipe is nearly forgotten and someone asks you to write it down.",
+      "icon": "🥣",
+      "minAge": 22,
+      "maxAge": 90,
+      "weight": 4,
+      "conditions": {
+        "relationshipRole": "parent",
+        "relationshipClosenessMin": 20
+      },
+      "choices": [
+        {
+          "id": "learn",
+          "label": "Learn it properly",
+          "outcome": "You practise until the recipe feels like part of your own memory.",
+          "effects": {
+            "relationship": {
+              "role": "parent",
+              "amount": 6
+            },
+            "stats": {
+              "happiness": 3
+            }
+          }
+        },
+        {
+          "id": "record",
+          "label": "Write down the instructions",
+          "outcome": "You preserve the recipe carefully for a future generation.",
+          "effects": {
+            "stats": {
+              "knowledge": 2
+            },
+            "legacy": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "midlife_change_room",
+      "title": "A room that no longer fits your life",
+      "text": "You notice that part of your home still belongs to an older version of you.",
+      "icon": "🪴",
+      "minAge": 35,
+      "maxAge": 65,
+      "weight": 4,
+      "choices": [
+        {
+          "id": "change",
+          "label": "Redesign the space",
+          "outcome": "The room begins to feel useful and welcoming again.",
+          "effects": {
+            "cash": -450,
+            "stats": {
+              "happiness": 4
+            }
+          }
+        },
+        {
+          "id": "leave",
+          "label": "Keep it as it is",
+          "outcome": "You decide the old room can remain a quiet archive.",
+          "effects": {
+            "stats": {
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "midlife_mentor",
+      "title": "Someone asks for your guidance",
+      "text": "A younger person asks how you handled a difficult part of your path.",
+      "icon": "🧭",
+      "minAge": 35,
+      "maxAge": 75,
+      "weight": 5,
+      "choices": [
+        {
+          "id": "honest",
+          "label": "Give honest advice",
+          "outcome": "You share both the mistakes and the parts that worked.",
+          "effects": {
+            "stats": {
+              "happiness": 3,
+              "knowledge": 2
+            },
+            "legacy": 1
+          }
+        },
+        {
+          "id": "encourage",
+          "label": "Focus on encouragement",
+          "outcome": "You help them leave the conversation believing in their own choices.",
+          "effects": {
+            "stats": {
+              "happiness": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "later_life_letters",
+      "title": "A box of old letters",
+      "text": "A box contains messages, photographs, and small reminders of earlier years.",
+      "icon": "📦",
+      "minAge": 55,
+      "maxAge": 110,
+      "weight": 5,
+      "choices": [
+        {
+          "id": "read",
+          "label": "Read through everything",
+          "outcome": "The afternoon becomes a gentle journey through old memories.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "share",
+          "label": "Share them with family",
+          "outcome": "The stories become part of the family’s shared history.",
+          "effects": {
+            "stats": {
+              "happiness": 3
+            },
+            "legacy": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "later_life_community_honour",
+      "title": "A quiet community honour",
+      "text": "People in your community thank you for the years you have spent contributing.",
+      "icon": "🏅",
+      "minAge": 60,
+      "maxAge": 115,
+      "weight": 3,
+      "choices": [
+        {
+          "id": "accept",
+          "label": "Accept with gratitude",
+          "outcome": "The recognition feels meaningful because it comes from people who know you.",
+          "effects": {
+            "stats": {
+              "happiness": 5
+            },
+            "legacy": 3
+          }
+        },
+        {
+          "id": "redirect",
+          "label": "Thank the whole group instead",
+          "outcome": "You use the moment to recognise everyone who helped along the way.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "resilience": 2
+            },
+            "legacy": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "later_life_new_skill",
+      "title": "A beginner again",
+      "text": "You find a skill you never had time to learn before.",
+      "icon": "🧶",
+      "minAge": 58,
+      "maxAge": 105,
+      "weight": 4,
+      "choices": [
+        {
+          "id": "learn",
+          "label": "Start from the beginning",
+          "outcome": "Being a beginner feels refreshing rather than embarrassing.",
+          "effects": {
+            "stats": {
+              "knowledge": 4,
+              "happiness": 3
+            }
+          }
+        },
+        {
+          "id": "observe",
+          "label": "Watch and appreciate",
+          "outcome": "You enjoy seeing other people practise their craft.",
+          "effects": {
+            "stats": {
+              "happiness": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "weather_power_cut",
+      "title": "A long evening without power",
+      "text": "A storm causes a power cut and the usual distractions disappear.",
+      "icon": "🕯️",
+      "minAge": 5,
+      "maxAge": 100,
+      "weight": 4,
+      "repeatable": true,
+      "cooldown": 12,
+      "choices": [
+        {
+          "id": "stories",
+          "label": "Tell stories together",
+          "outcome": "The dark room fills with stories and laughter.",
+          "effects": {
+            "stats": {
+              "happiness": 4
+            }
+          }
+        },
+        {
+          "id": "quiet",
+          "label": "Enjoy the quiet",
+          "outcome": "You listen to the weather and let the evening slow down.",
+          "effects": {
+            "stats": {
+              "resilience": 2,
+              "health": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "seasonal_first_snow",
+      "title": "The first snow of the season",
+      "text": "The world outside changes overnight under a layer of snow.",
+      "icon": "❄️",
+      "minAge": 2,
+      "maxAge": 105,
+      "weight": 3,
+      "repeatable": true,
+      "cooldown": 15,
+      "choices": [
+        {
+          "id": "outside",
+          "label": "Go outside",
+          "outcome": "The cold air and bright landscape make the day memorable.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "health": 1
+            }
+          }
+        },
+        {
+          "id": "window",
+          "label": "Watch from somewhere warm",
+          "outcome": "You stay warm and enjoy the view from indoors.",
+          "effects": {
+            "stats": {
+              "happiness": 3
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

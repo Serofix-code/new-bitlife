@@ -1,0 +1,125 @@
+{
+  "kind": "events",
+  "category": "work",
+  "events": [
+    {
+      "id": "work_first_week",
+      "title": "Names, doors, and passwords",
+      "text": "Your first week brings unfamiliar faces, mysterious cupboards, and more logins than any person should need.",
+      "icon": "🪪",
+      "minAge": 16,
+      "weight": 8,
+      "cooldown": 8,
+      "conditions": { "careerActive": true, "careerYearsMax": 1 },
+      "choices": [
+        { "id": "notes", "label": "Take careful notes", "outcome": "By Friday, you know where things live and who can explain the rest.", "effects": { "stats": { "knowledge": 4, "resilience": 3 }, "careerPerformance": 6 } },
+        { "id": "people", "label": "Focus on meeting people", "outcome": "You still get lost once, but someone always points you back.", "effects": { "stats": { "happiness": 4, "resilience": 2 }, "careerPerformance": 2, "addRelationship": { "role": "friend", "closeness": 42 } } },
+        { "id": "quiet", "label": "Keep your head down", "outcome": "You avoid mistakes, though the workplace remains a little mysterious.", "effects": { "stats": { "happiness": -1 }, "careerPerformance": 1 } }
+      ]
+    },
+    {
+      "id": "work_customer_crisis",
+      "title": "The problem at closing time",
+      "text": "Just as the day should end, a complicated problem lands directly in front of you.",
+      "icon": "🚨",
+      "minAge": 16,
+      "weight": 7,
+      "cooldown": 4,
+      "conditions": { "careerActive": true },
+      "choices": [
+        { "id": "solve", "label": "Stay and see it through", "outcome": "It takes hours, but the problem finally gives way.", "effects": { "stats": { "knowledge": 3, "resilience": 4, "health": -3, "happiness": -2 }, "careerPerformance": 7 } },
+        { "id": "team", "label": "Call in the right people", "outcome": "A small team untangles it faster than any one person could.", "effects": { "stats": { "resilience": 3, "happiness": 2 }, "careerPerformance": 5 } },
+        { "id": "handoff", "label": "Document it for tomorrow", "outcome": "The morning crew appreciates the notes, if not the surprise.", "effects": { "stats": { "health": 2 }, "careerPerformance": -1 } }
+      ]
+    },
+    {
+      "id": "work_visible_mistake",
+      "title": "The mistake everyone can see",
+      "text": "A decision you made has caused a visible problem. It is fixable, but no longer private.",
+      "icon": "🫣",
+      "minAge": 17,
+      "weight": 6,
+      "cooldown": 5,
+      "conditions": { "careerActive": true },
+      "choices": [
+        { "id": "own", "label": "Own it and propose a fix", "outcome": "The correction works. People remember the recovery more than the error.", "effects": { "stats": { "resilience": 6, "knowledge": 3, "happiness": -2 }, "careerPerformance": 3 } },
+        { "id": "hide", "label": "Quietly patch it", "outcome": "The patch holds, though the worry follows you home.", "effects": { "stats": { "happiness": -5, "resilience": -2 }, "careerPerformance": -3 } },
+        { "id": "blame", "label": "Point to a confusing process", "outcome": "The process was confusing, but the room hears an excuse.", "effects": { "stats": { "happiness": 1, "resilience": -4 }, "careerPerformance": -7 } }
+      ]
+    },
+    {
+      "id": "work_mentor_offer",
+      "title": "Coffee with a veteran",
+      "text": "An experienced colleague offers to show you the parts of the job nobody writes down.",
+      "icon": "🧭",
+      "minAge": 18,
+      "weight": 4,
+      "once": true,
+      "conditions": { "careerActive": true },
+      "choices": [
+        { "id": "accept", "label": "Make time for the guidance", "outcome": "Their stories save you months of avoidable trial and error.", "effects": { "stats": { "knowledge": 8, "resilience": 4 }, "careerPerformance": 6, "flags": { "has_work_mentor": true } } },
+        { "id": "independent", "label": "Learn independently", "outcome": "You choose the slower road, but it is unmistakably your own.", "effects": { "stats": { "resilience": 5, "knowledge": 2 }, "careerPerformance": 1 } }
+      ]
+    },
+    {
+      "id": "work_salary_conversation",
+      "title": "A number across the table",
+      "text": "Your review goes well. This may be the moment to discuss what your work is worth.",
+      "icon": "💬",
+      "minAge": 20,
+      "weight": 4,
+      "cooldown": 7,
+      "conditions": { "careerActive": true, "careerPerformanceMin": 55 },
+      "choices": [
+        { "id": "evidence", "label": "Make a case with evidence", "outcome": "The preparation pays off with a meaningful raise.", "effects": { "stats": { "resilience": 4, "happiness": 4 }, "salaryMultiplier": 1.08, "careerPerformance": 2 } },
+        { "id": "bold", "label": "Ask for a much bigger jump", "outcome": "The full request is declined, but your confidence earns a smaller increase.", "effects": { "stats": { "resilience": 3 }, "salaryMultiplier": 1.04, "careerPerformance": -1 } },
+        { "id": "later", "label": "Wait until next time", "outcome": "The review ends warmly, with the number unchanged.", "effects": { "stats": { "happiness": -2 }, "careerPerformance": 2 } }
+      ]
+    },
+    {
+      "id": "work_shortcut",
+      "title": "The tempting shortcut",
+      "text": "A colleague suggests skipping a safeguard to finish a project early. It would probably go unnoticed.",
+      "icon": "⚠️",
+      "minAge": 18,
+      "weight": 4,
+      "cooldown": 8,
+      "conditions": { "careerActive": true },
+      "choices": [
+        { "id": "refuse", "label": "Insist on doing it properly", "outcome": "The launch is later, but everyone can stand behind it.", "effects": { "stats": { "resilience": 5, "happiness": 2 }, "careerPerformance": 4, "flags": { "chose_safe_work": true } } },
+        { "id": "shortcut", "label": "Take the shortcut", "outcome": "The project lands on time. A nagging uncertainty remains underneath the celebration.", "effects": { "stats": { "happiness": -3, "resilience": -3 }, "careerPerformance": 5, "flags": { "took_work_shortcut": true } } },
+        { "id": "escalate", "label": "Ask a manager to decide", "outcome": "The pressure moves upward, and the safeguard stays.", "effects": { "stats": { "resilience": 3 }, "careerPerformance": 1 } }
+      ]
+    },
+    {
+      "id": "work_restructure",
+      "title": "The all-hands invitation",
+      "text": "A sudden meeting reveals that several roles are being removed, including yours.",
+      "icon": "📦",
+      "minAge": 20,
+      "weight": 2,
+      "cooldown": 12,
+      "conditions": { "careerActive": true },
+      "choices": [
+        { "id": "network", "label": "Call people before leaving", "outcome": "The news hurts, but a handful of leads give the next morning direction.", "effects": { "cash": 3500, "stats": { "happiness": -8, "resilience": 6 }, "endCareer": true, "flags": { "job_leads": true } } },
+        { "id": "pause", "label": "Take the severance and breathe", "outcome": "For once, your calendar is empty. The uncertainty and relief arrive together.", "effects": { "cash": 4500, "stats": { "happiness": -4, "health": 4 }, "endCareer": true } },
+        { "id": "protest", "label": "Challenge the decision", "outcome": "The role still ends, but the improved exit package helps.", "effects": { "cash": 6000, "stats": { "happiness": -9, "resilience": 4 }, "endCareer": true } }
+      ]
+    },
+    {
+      "id": "work_burnout_edge",
+      "title": "Running on the reserve light",
+      "text": "Small tasks feel enormous, and another full week waits on the other side of Sunday.",
+      "icon": "🪫",
+      "minAge": 19,
+      "weight": 5,
+      "cooldown": 5,
+      "conditions": { "careerActive": true, "statsMax": { "health": 55 } },
+      "choices": [
+        { "id": "leave", "label": "Use some leave and recover", "outcome": "Rest does not solve everything, but your thoughts become your own again.", "effects": { "stats": { "health": 9, "happiness": 6 }, "careerPerformance": -4 } },
+        { "id": "boundary", "label": "Set a firm boundary", "outcome": "A few tasks move elsewhere. The world continues to turn.", "effects": { "stats": { "health": 5, "resilience": 5 }, "careerPerformance": -1 } },
+        { "id": "push", "label": "Push through the deadline", "outcome": "The deadline passes. Your exhaustion does not.", "effects": { "stats": { "health": -10, "happiness": -6 }, "careerPerformance": 6 } }
+      ]
+    }
+  ]
+}

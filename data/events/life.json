@@ -1,0 +1,141 @@
+{
+  "kind": "events",
+  "category": "life",
+  "events": [
+    {
+      "id": "life_seasonal_bug",
+      "title": "The week of tissues",
+      "text": "A stubborn seasonal bug arrives with a sore throat, heavy limbs, and terrible timing.",
+      "icon": "🤧",
+      "minAge": 3,
+      "weight": 7,
+      "cooldown": 4,
+      "choices": [
+        { "id": "rest", "label": "Rest properly", "outcome": "The world waits while your body does the work of recovering.", "effects": { "stats": { "health": 2, "happiness": -2 } } },
+        { "id": "doctor", "label": "Get medical advice", "requires": { "cashAtLeast": 90 }, "outcome": "A check confirms it is ordinary and gives you a sensible recovery plan.", "effects": { "cash": -90, "stats": { "health": 5, "happiness": 1 } } },
+        { "id": "push", "label": "Carry on as usual", "outcome": "The week gets done, but the illness lingers longer than it needed to.", "effects": { "stats": { "health": -7, "happiness": -4, "resilience": 1 } } }
+      ]
+    },
+    {
+      "id": "life_small_windfall",
+      "title": "A forgotten refund",
+      "text": "An old account closes with a refund you had completely forgotten was coming.",
+      "icon": "📬",
+      "minAge": 18,
+      "weight": 4,
+      "cooldown": 8,
+      "choices": [
+        { "id": "save", "label": "Put it aside", "outcome": "The money becomes a little more breathing room.", "effects": { "cash": 1400, "stats": { "resilience": 2 } } },
+        { "id": "treat", "label": "Spend some on a memorable day", "outcome": "The refund turns into laughter, food, and a story worth keeping.", "effects": { "cash": 750, "stats": { "happiness": 7 } } },
+        { "id": "share", "label": "Share it with someone close", "outcome": "The surprise becomes twice as enjoyable.", "effects": { "cash": 700, "stats": { "happiness": 5 }, "relationship": { "role": "random", "amount": 7 } } }
+      ]
+    },
+    {
+      "id": "life_suspicious_offer",
+      "title": "Guaranteed returns",
+      "text": "A confident stranger presents an investment that is urgent, exclusive, and apparently unable to fail.",
+      "icon": "📈",
+      "minAge": 18,
+      "weight": 4,
+      "cooldown": 9,
+      "choices": [
+        { "id": "research", "label": "Research it first", "outcome": "Two searches reveal warnings, vanished websites, and a regulator notice.", "effects": { "stats": { "knowledge": 5, "resilience": 3 }, "flags": { "spotted_scam": true } } },
+        { "id": "invest", "label": "Risk a small amount", "requires": { "cashAtLeast": 1200 }, "variants": [
+          { "weight": 1, "outcome": "Against the odds, an early payout arrives before the scheme disappears.", "effects": { "cash": 1600, "stats": { "happiness": 5 } } },
+          { "weight": 4, "outcome": "The contact vanishes, taking your money and their polished promises.", "effects": { "cash": -1200, "stats": { "happiness": -7, "resilience": 3 } } }
+        ] },
+        { "id": "ignore", "label": "Walk away", "outcome": "The stranger quickly finds someone else to pressure.", "effects": { "stats": { "resilience": 2 } } }
+      ]
+    },
+    {
+      "id": "life_home_repair",
+      "title": "A drip becomes a stream",
+      "text": "A quiet household leak chooses the middle of the night to become an urgent repair.",
+      "icon": "🪠",
+      "minAge": 20,
+      "weight": 4,
+      "cooldown": 7,
+      "conditions": { "ownsProperty": true },
+      "choices": [
+        { "id": "pro", "label": "Call an emergency professional", "requires": { "cashAtLeast": 850 }, "outcome": "The repair is expensive, dry, and blessedly complete.", "effects": { "cash": -850, "stats": { "happiness": -2, "health": 1 } } },
+        { "id": "diy", "label": "Study a guide and fix it", "variants": [
+          { "weight": 3, "outcome": "Several careful hours later, the pipe holds and your confidence rises.", "effects": { "cash": -140, "stats": { "knowledge": 5, "resilience": 5, "happiness": 2 } } },
+          { "weight": 2, "outcome": "The first repair creates a second leak. Eventually, a professional solves both.", "effects": { "cash": -1250, "stats": { "health": -3, "happiness": -6, "knowledge": 2 } } }
+        ] },
+        { "id": "bucket", "label": "Use buckets until morning", "outcome": "The buckets work, sleep does not.", "effects": { "cash": -500, "stats": { "health": -3, "happiness": -4 } } }
+      ]
+    },
+    {
+      "id": "life_old_hobby_box",
+      "title": "The box at the back",
+      "text": "While clearing a cupboard, you find an old hobby packed away with half-finished ideas.",
+      "icon": "📦",
+      "minAge": 25,
+      "weight": 4,
+      "cooldown": 10,
+      "choices": [
+        { "id": "restart", "label": "Make space for it again", "outcome": "Your hands remember more than you expected.", "effects": { "stats": { "happiness": 8, "knowledge": 3 }, "flags": { "rediscovered_hobby": true } } },
+        { "id": "give", "label": "Give the supplies away", "outcome": "Someone else lights up at exactly the right box of possibilities.", "effects": { "stats": { "happiness": 5, "resilience": 2 } } },
+        { "id": "sell", "label": "Sell what still has value", "outcome": "The cupboard gains space and your account gains a little cash.", "effects": { "cash": 420, "stats": { "happiness": 2 } } }
+      ]
+    },
+    {
+      "id": "life_health_warning",
+      "title": "A result worth noticing",
+      "text": "A routine check highlights a health marker that is not dangerous yet, but could become so.",
+      "icon": "🫀",
+      "minAge": 40,
+      "weight": 5,
+      "cooldown": 7,
+      "choices": [
+        { "id": "changes", "label": "Make sustainable changes", "outcome": "The changes are small enough to keep and large enough to matter.", "effects": { "cash": -300, "stats": { "health": 9, "happiness": 2, "resilience": 5 } } },
+        { "id": "intense", "label": "Overhaul everything at once", "outcome": "The strict plan works briefly before collapsing under its own weight.", "effects": { "cash": -600, "stats": { "health": 3, "happiness": -5, "resilience": 1 } } },
+        { "id": "ignore", "label": "Deal with it another year", "outcome": "Nothing feels different, which makes postponing easy.", "effects": { "stats": { "health": -8, "happiness": 1 } } }
+      ]
+    },
+    {
+      "id": "life_community_role",
+      "title": "A seat at the small table",
+      "text": "A local group asks you to take on a modest leadership role with very real responsibilities.",
+      "icon": "🏘️",
+      "minAge": 30,
+      "weight": 3,
+      "once": true,
+      "conditions": { "statsMin": { "resilience": 55 } },
+      "choices": [
+        { "id": "accept", "label": "Serve for a term", "outcome": "Progress is slow and practical, measured in repaired benches and better meetings.", "effects": { "stats": { "happiness": 5, "resilience": 6, "health": -2 }, "flags": { "community_leader": true } } },
+        { "id": "support", "label": "Help without leading", "outcome": "You contribute where you can without owning the whole agenda.", "effects": { "stats": { "happiness": 3, "resilience": 3 } } },
+        { "id": "decline", "label": "Protect your current commitments", "outcome": "The group understands. A full life is already a form of responsibility.", "effects": { "stats": { "health": 2, "resilience": 2 } } }
+      ]
+    },
+    {
+      "id": "life_retirement_rhythm",
+      "title": "Monday without an alarm",
+      "text": "The first stretch of retirement feels less like a holiday and more like an entirely new kind of time.",
+      "icon": "🌤️",
+      "minAge": 60,
+      "weight": 5,
+      "once": true,
+      "conditions": { "flagsAll": ["retired"] },
+      "choices": [
+        { "id": "routine", "label": "Build a gentle routine", "outcome": "Walks, projects, and regular calls give the weeks a welcome shape.", "effects": { "stats": { "health": 6, "happiness": 7, "resilience": 3 } } },
+        { "id": "explore", "label": "Keep the calendar open", "outcome": "Unplanned days lead to several small adventures.", "effects": { "cash": -900, "stats": { "happiness": 9, "health": 2 } } },
+        { "id": "work", "label": "Take occasional project work", "outcome": "A little work keeps your skills sharp without owning your life.", "effects": { "cash": 4200, "stats": { "knowledge": 3, "happiness": 2, "health": -2 } } }
+      ]
+    },
+    {
+      "id": "life_memory_project",
+      "title": "Stories worth leaving",
+      "text": "A younger relative asks about your early years and realizes how many stories exist only in memory.",
+      "icon": "📖",
+      "minAge": 65,
+      "weight": 4,
+      "once": true,
+      "choices": [
+        { "id": "write", "label": "Begin a family memoir", "outcome": "The first page unlocks another, and then another.", "effects": { "stats": { "happiness": 7, "knowledge": 3 }, "flags": { "wrote_memoir": true }, "legacy": 12 } },
+        { "id": "record", "label": "Record relaxed conversations", "outcome": "Laughter, pauses, and voices become part of the archive too.", "effects": { "stats": { "happiness": 8 }, "relationship": { "role": "child", "amount": 7 }, "legacy": 10 } },
+        { "id": "private", "label": "Keep some stories private", "outcome": "Not every memory needs an audience to remain meaningful.", "effects": { "stats": { "resilience": 4, "happiness": 2 }, "legacy": 3 } }
+      ]
+    }
+  ]
+}

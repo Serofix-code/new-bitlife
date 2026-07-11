@@ -1,0 +1,127 @@
+{
+  "kind": "events",
+  "category": "relationships",
+  "events": [
+    {
+      "id": "relationship_new_neighbor",
+      "title": "A familiar face downstairs",
+      "text": "A neighbor you often greet suggests sharing a coffee instead of another hallway wave.",
+      "icon": "👋",
+      "minAge": 14,
+      "weight": 6,
+      "cooldown": 5,
+      "choices": [
+        { "id": "yes", "label": "Make time for coffee", "outcome": "One cup becomes an easy afternoon of conversation.", "effects": { "stats": { "happiness": 5 }, "addRelationship": { "role": "friend", "closeness": 54 } } },
+        { "id": "later", "label": "Suggest another day", "outcome": "You exchange numbers, though the plan remains unwritten.", "effects": { "stats": { "happiness": 1 } } },
+        { "id": "decline", "label": "Keep things neighborly", "outcome": "The hallway waves remain friendly and brief.", "effects": { "stats": { "resilience": 1 } } }
+      ]
+    },
+    {
+      "id": "relationship_friend_favor",
+      "title": "A friend needs a hand",
+      "text": "A friend calls with a stressful, inconvenient request that really cannot wait.",
+      "icon": "📞",
+      "minAge": 12,
+      "weight": 7,
+      "cooldown": 4,
+      "conditions": { "relationshipRole": "friend" },
+      "choices": [
+        { "id": "show", "label": "Show up and help", "outcome": "It takes most of the day. Your friend will remember that you came.", "effects": { "stats": { "happiness": 2, "health": -2 }, "relationship": { "role": "friend", "amount": 9 } } },
+        { "id": "partial", "label": "Offer a smaller kind of help", "outcome": "It is not everything they hoped for, but it makes the problem lighter.", "effects": { "stats": { "resilience": 2 }, "relationship": { "role": "friend", "amount": 3 } } },
+        { "id": "no", "label": "Say you cannot this time", "outcome": "The boundary is honest, even if the silence afterward is awkward.", "effects": { "stats": { "happiness": -2, "resilience": 3 }, "relationship": { "role": "friend", "amount": -5 } } }
+      ]
+    },
+    {
+      "id": "relationship_growing_distance",
+      "title": "Messages left unread",
+      "text": "A once-close friendship has become a trail of delayed replies and plans that never happen.",
+      "icon": "💬",
+      "minAge": 16,
+      "weight": 4,
+      "cooldown": 8,
+      "conditions": { "relationshipRole": "friend" },
+      "choices": [
+        { "id": "reach", "label": "Ask what has changed", "outcome": "The conversation is uncomfortable, honest, and worth having.", "effects": { "stats": { "resilience": 4, "happiness": 2 }, "relationship": { "role": "friend", "amount": 8 } } },
+        { "id": "space", "label": "Give the friendship room", "outcome": "Not every season of a friendship has to look the same.", "effects": { "stats": { "resilience": 3 }, "relationship": { "role": "friend", "amount": -3 } } },
+        { "id": "end", "label": "Let the connection fade", "outcome": "The ending is quiet, with no villain and no final speech.", "effects": { "stats": { "happiness": -4, "resilience": 2 }, "endRelationship": { "role": "friend" } } }
+      ]
+    },
+    {
+      "id": "relationship_meet_someone",
+      "title": "An unexpectedly long conversation",
+      "text": "You meet someone whose stories keep the evening moving long after you planned to leave.",
+      "icon": "✨",
+      "minAge": 18,
+      "maxAge": 78,
+      "weight": 5,
+      "cooldown": 7,
+      "conditions": { "flagsNone": ["has_partner"] },
+      "choices": [
+        { "id": "number", "label": "Exchange numbers", "outcome": "A new message arrives before you are even home.", "effects": { "stats": { "happiness": 7 }, "addRelationship": { "role": "partner", "closeness": 57 }, "flags": { "has_partner": true } } },
+        { "id": "friend", "label": "Keep it friendly", "outcome": "The spark settles into an easy new friendship.", "effects": { "stats": { "happiness": 4 }, "addRelationship": { "role": "friend", "closeness": 50 } } },
+        { "id": "goodnight", "label": "Enjoy the moment and say goodnight", "outcome": "Some lovely conversations are complete exactly as they are.", "effects": { "stats": { "happiness": 3, "resilience": 1 } } }
+      ]
+    },
+    {
+      "id": "relationship_commitment",
+      "title": "Keys on the table",
+      "text": "Your partner suggests building a more shared life: one home, two sets of keys, many decisions.",
+      "icon": "🔑",
+      "minAge": 20,
+      "weight": 4,
+      "once": true,
+      "conditions": { "relationshipRole": "partner", "relationshipClosenessMin": 62, "flagsNone": ["committed_partner"] },
+      "choices": [
+        { "id": "yes", "label": "Choose the shared chapter", "outcome": "The first night is boxes, takeaway food, and a feeling of arrival.", "effects": { "stats": { "happiness": 8, "resilience": 3 }, "relationship": { "role": "partner", "amount": 10 }, "flags": { "committed_partner": true } } },
+        { "id": "later", "label": "Ask for more time", "outcome": "The question remains open without becoming an ultimatum.", "effects": { "stats": { "resilience": 3, "happiness": -1 }, "relationship": { "role": "partner", "amount": -2 } } },
+        { "id": "no", "label": "Say this is not the future you want", "outcome": "Honesty closes one future before resentment can build inside it.", "effects": { "stats": { "happiness": -9, "resilience": 5 }, "endRelationship": { "role": "partner" }, "flags": { "has_partner": false } } }
+      ]
+    },
+    {
+      "id": "relationship_child_question",
+      "title": "A future with one more chair",
+      "text": "The possibility of raising a child stops being abstract. It is time for a real conversation.",
+      "icon": "🧸",
+      "minAge": 22,
+      "maxAge": 52,
+      "weight": 4,
+      "cooldown": 8,
+      "conditions": { "relationshipRole": "partner", "relationshipClosenessMin": 58 },
+      "choices": [
+        { "id": "welcome", "label": "Grow the family", "outcome": "After months of plans and surprises, a new person joins your story.", "effects": { "cash": -2800, "stats": { "happiness": 10, "health": -3, "resilience": 5 }, "addRelationship": { "role": "child", "closeness": 78, "ageOffset": 0 }, "relationship": { "role": "partner", "amount": 5 } } },
+        { "id": "wait", "label": "Wait for a steadier moment", "outcome": "The decision is not no; it is not yet.", "effects": { "stats": { "resilience": 2 }, "relationship": { "role": "partner", "amount": 1 } } },
+        { "id": "other", "label": "Choose a different kind of future", "outcome": "The shared picture changes, but remains full of possibility.", "effects": { "stats": { "happiness": 3, "resilience": 4 }, "flags": { "childfree_choice": true } } }
+      ]
+    },
+    {
+      "id": "relationship_family_reunion",
+      "title": "The long table",
+      "text": "A family gathering brings old stories, changed faces, and at least one debate nobody needed to restart.",
+      "icon": "🍲",
+      "minAge": 16,
+      "weight": 4,
+      "cooldown": 7,
+      "conditions": { "relationshipRole": "parent" },
+      "choices": [
+        { "id": "stories", "label": "Sit with the storytellers", "outcome": "You hear a family story that somehow never reached you before.", "effects": { "stats": { "happiness": 5, "knowledge": 3 }, "relationship": { "role": "parent", "amount": 5 } } },
+        { "id": "kitchen", "label": "Help in the kitchen", "outcome": "The best conversations happen while drying plates.", "effects": { "stats": { "happiness": 4, "resilience": 2 }, "relationship": { "role": "sibling", "amount": 4 } } },
+        { "id": "early", "label": "Leave before the debate returns", "outcome": "You preserve a pleasant afternoon by ending it on time.", "effects": { "stats": { "health": 2, "resilience": 3 } } }
+      ]
+    },
+    {
+      "id": "relationship_parent_needs_help",
+      "title": "A role quietly reverses",
+      "text": "A parent admits that everyday tasks are becoming harder and asks for more support.",
+      "icon": "🫶",
+      "minAge": 38,
+      "weight": 5,
+      "cooldown": 6,
+      "conditions": { "relationshipRole": "parent" },
+      "choices": [
+        { "id": "time", "label": "Make regular time to help", "outcome": "The schedule is demanding, but the shared hours become meaningful.", "effects": { "stats": { "happiness": 2, "health": -3, "resilience": 5 }, "relationship": { "role": "parent", "amount": 10 } } },
+        { "id": "services", "label": "Arrange practical support", "requires": { "cashAtLeast": 2000 }, "outcome": "Professional help protects both their independence and your relationship.", "effects": { "cash": -2000, "stats": { "happiness": 3 }, "relationship": { "role": "parent", "amount": 5 } } },
+        { "id": "sibling", "label": "Share the work with family", "outcome": "The plan is imperfect, but nobody has to carry it alone.", "effects": { "stats": { "resilience": 4 }, "relationship": { "role": "sibling", "amount": 3 } } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "kind": "events",
+  "category": "wizard",
+  "events": [
+    {
+      "id": "activity_magic_practice",
+      "title": "A controlled practice session",
+      "text": "You trace a small circle of light and practise holding it steady.",
+      "icon": "🪄",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "focus",
+          "label": "Focus on control",
+          "outcome": "The light stays calm and your magical control improves.",
+          "effects": {
+            "stats": {
+              "knowledge": 3,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "power",
+          "label": "Push for more power",
+          "outcome": "The spell flares brightly before fading, leaving you exhilarated.",
+          "effects": {
+            "stats": {
+              "happiness": 3,
+              "health": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_occult_research",
+      "title": "A clue in an old text",
+      "text": "A strange passage suggests that magic can be awakened through study, mentorship, inheritance, or a moment of crisis.",
+      "icon": "📜",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "notes",
+          "label": "Take careful notes",
+          "outcome": "You copy the clues and begin noticing patterns you had missed.",
+          "effects": {
+            "stats": {
+              "knowledge": 4
+            },
+            "flags": {
+              "occult_researched": true
+            }
+          }
+        },
+        {
+          "id": "close",
+          "label": "Close the book for now",
+          "outcome": "You decide not to rush into something you do not yet understand.",
+          "effects": {
+            "stats": {
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_doctor",
+      "title": "A routine appointment",
+      "text": "A doctor asks about your health, sleep, and any concerns you have noticed.",
+      "icon": "🩺",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "honest",
+          "label": "Describe everything honestly",
+          "outcome": "The appointment gives you a clearer plan for looking after yourself.",
+          "effects": {
+            "stats": {
+              "health": 7,
+              "resilience": 2
+            }
+          }
+        },
+        {
+          "id": "brief",
+          "label": "Keep the visit brief",
+          "outcome": "You complete the basic check and leave with simple advice.",
+          "effects": {
+            "stats": {
+              "health": 4
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "activity_fame",
+      "title": "A public appearance",
+      "text": "You have a chance to shape how people see you.",
+      "icon": "⭐",
+      "activityOnly": true,
+      "choices": [
+        {
+          "id": "thoughtful",
+          "label": "Be thoughtful and sincere",
+          "outcome": "People respond well to your calm and genuine appearance.",
+          "effects": {
+            "stats": {
+              "happiness": 2,
+              "resilience": 2
+            },
+            "flags": {
+              "fame_good_press": true
+            }
+          }
+        },
+        {
+          "id": "bold",
+          "label": "Make a bold impression",
+          "outcome": "The appearance gets attention, though not everyone agrees about it.",
+          "effects": {
+            "stats": {
+              "happiness": 3
+            },
+            "flags": {
+              "fame_bold_press": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "wizard_accidental_sparks",
+      "title": "Sparks at the wrong moment",
+      "text": "A small burst of magic escapes when you are startled in public.",
+      "icon": "⚡",
+      "minAge": 6,
+      "maxAge": 40,
+      "weight": 5,
+      "conditions": {
+        "flagsAll": [
+          "wizard"
+        ]
+      },
+      "choices": [
+        {
+          "id": "cover",
+          "label": "Pretend it was a trick",
+          "outcome": "Most people accept the explanation, though one person looks unconvinced.",
+          "effects": {
+            "stats": {
+              "resilience": 2,
+              "happiness": -1
+            }
+          }
+        },
+        {
+          "id": "confide",
+          "label": "Tell someone you trust",
+          "outcome": "Sharing the truth makes the secret feel lighter.",
+          "effects": {
+            "relationship": {
+              "role": "friend",
+              "amount": 5
+            },
+            "stats": {
+              "happiness": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "wizard_familiar_visit",
+      "title": "A possible familiar",
+      "text": "A clever animal begins appearing whenever you practise magic.",
+      "icon": "🐈",
+      "minAge": 8,
+      "maxAge": 80,
+      "weight": 4,
+      "conditions": {
+        "flagsAll": [
+          "wizard"
+        ]
+      },
+      "choices": [
+        {
+          "id": "welcome",
+          "label": "Welcome it",
+          "outcome": "The animal settles nearby and seems to understand far more than it should.",
+          "effects": {
+            "stats": {
+              "happiness": 4,
+              "knowledge": 2
+            },
+            "flags": {
+              "has_familiar": true
+            }
+          }
+        },
+        {
+          "id": "observe",
+          "label": "Observe from a distance",
+          "outcome": "You study its behaviour without deciding what the connection means.",
+          "effects": {
+            "stats": {
+              "knowledge": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "wizard_family_secret",
+      "title": "A family secret about magic",
+      "text": "A relative admits that unusual abilities have appeared in the family before.",
+      "icon": "🌙",
+      "minAge": 10,
+      "maxAge": 45,
+      "weight": 4,
+      "conditions": {
+        "flagsAll": [
+          "wizard"
+        ],
+        "relationshipRole": "parent"
+      },
+      "choices": [
+        {
+          "id": "ask",
+          "label": "Ask them everything",
+          "outcome": "The conversation explains why magic always felt strangely familiar.",
+          "effects": {
+            "relationship": {
+              "role": "parent",
+              "amount": 7
+            },
+            "stats": {
+              "knowledge": 4
+            }
+          }
+        },
+        {
+          "id": "wait",
+          "label": "Give them time",
+          "outcome": "You let the secret settle and promise to talk again later.",
+          "effects": {
+            "relationship": {
+              "role": "parent",
+              "amount": 3
+            },
+            "stats": {
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "wizard_dream_library",
+      "title": "The library behind a dream",
+      "text": "You dream of shelves containing books that do not exist anywhere else.",
+      "icon": "📚",
+      "minAge": 12,
+      "maxAge": 100,
+      "weight": 4,
+      "conditions": {
+        "flagsAll": [
+          "wizard"
+        ]
+      },
+      "choices": [
+        {
+          "id": "read",
+          "label": "Open one of the books",
+          "outcome": "You wake remembering a fragment of a spell and a feeling of vast possibility.",
+          "effects": {
+            "stats": {
+              "knowledge": 5,
+              "health": -1
+            }
+          }
+        },
+        {
+          "id": "leave",
+          "label": "Leave the library alone",
+          "outcome": "You wake rested, with the sense that the door will return when needed.",
+          "effects": {
+            "stats": {
+              "health": 3,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "wizard_ethics",
+      "title": "A tempting shortcut",
+      "text": "Magic offers an easy solution to a problem that would normally require patience.",
+      "icon": "⚖️",
+      "minAge": 14,
+      "maxAge": 100,
+      "weight": 5,
+      "conditions": {
+        "flagsAll": [
+          "wizard"
+        ]
+      },
+      "choices": [
+        {
+          "id": "restraint",
+          "label": "Solve it without magic",
+          "outcome": "The slower solution strengthens your trust in your own judgement.",
+          "effects": {
+            "stats": {
+              "resilience": 4,
+              "knowledge": 1
+            },
+            "legacy": 1
+          }
+        },
+        {
+          "id": "spell",
+          "label": "Use a small spell",
+          "outcome": "The problem disappears quickly, but you wonder whether the shortcut was wise.",
+          "effects": {
+            "stats": {
+              "happiness": 3,
+              "resilience": -1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "wizard_public_rescue",
+      "title": "Magic could help in an emergency",
+      "text": "A sudden accident unfolds nearby, and a discreet spell might help without revealing too much.",
+      "icon": "🛡️",
+      "minAge": 16,
+      "maxAge": 100,
+      "weight": 3,
+      "conditions": {
+        "flagsAll": [
+          "wizard"
+        ]
+      },
+      "choices": [
+        {
+          "id": "help",
+          "label": "Use magic to help",
+          "outcome": "Your quick spell prevents the situation from becoming worse, and no one is certain what happened.",
+          "effects": {
+            "stats": {
+              "happiness": 5,
+              "resilience": 3
+            },
+            "legacy": 3,
+            "flags": {
+              "saved_with_magic": true
+            }
+          }
+        },
+        {
+          "id": "call",
+          "label": "Call for ordinary help",
+          "outcome": "You make sure trained help arrives and keep your magic hidden.",
+          "effects": {
+            "stats": {
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

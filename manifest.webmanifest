@@ -1,0 +1,17 @@
+{
+  "name": "Next Chapter \u2014 Life Simulator 2.1",
+  "short_name": "Next Chapter",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#10141b",
+  "theme_color": "#10141b",
+  "description": "A private, customizable, offline-first life simulator.",
+  "icons": [
+    {
+      "src": "assets/mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "kind": "events",
+  "category": "vampire",
+  "events": [
+    {
+      "id": "vampire_first_fangs",
+      "title": "Fangs in the mirror",
+      "text": "Two sharp little points appear when you smile. Your family realizes this {noun} is not entirely human.",
+      "icon": "\ud83e\udd87",
+      "minAge": 4,
+      "maxAge": 7,
+      "weight": 30,
+      "once": true,
+      "conditions": {
+        "flagsAll": [
+          "vampire"
+        ]
+      },
+      "choices": [
+        {
+          "id": "hide",
+          "label": "Practice hiding them",
+          "outcome": "You learn to smile carefully. Secrecy becomes second nature.",
+          "effects": {
+            "stats": {
+              "resilience": 5
+            },
+            "flags": {
+              "fangs_known": true
+            }
+          }
+        },
+        {
+          "id": "show",
+          "label": "Show your family",
+          "outcome": "Your parents promise to protect your secret and start researching unusual family recipes.",
+          "effects": {
+            "stats": {
+              "happiness": 6
+            },
+            "relationship": {
+              "role": "parent",
+              "amount": 8
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "vampire_sunlight_school",
+      "title": "A suspiciously sunny school trip",
+      "text": "The class is heading outdoors at midday, and the sunlight already feels too bright.",
+      "icon": "\u2600\ufe0f",
+      "minAge": 6,
+      "maxAge": 17,
+      "weight": 14,
+      "cooldown": 3,
+      "conditions": {
+        "flagsAll": [
+          "vampire"
+        ]
+      },
+      "choices": [
+        {
+          "id": "shade",
+          "label": "Stay in every patch of shade",
+          "outcome": "You finish the trip exhausted but undiscovered.",
+          "effects": {
+            "stats": {
+              "health": -3,
+              "resilience": 5
+            }
+          }
+        },
+        {
+          "id": "excuse",
+          "label": "Pretend to feel ill",
+          "outcome": "You spend the afternoon indoors while rumors spread that the {noun} from class hates sunlight.",
+          "effects": {
+            "stats": {
+              "happiness": -2,
+              "resilience": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "vampire_hunger",
+      "title": "The hunger beneath everything",
+      "text": "Your supernatural hunger becomes impossible to ignore, though nobody around you knows why you seem distracted.",
+      "icon": "\ud83e\ude78",
+      "minAge": 13,
+      "weight": 12,
+      "cooldown": 2,
+      "conditions": {
+        "flagsAll": [
+          "vampire"
+        ]
+      },
+      "choices": [
+        {
+          "id": "ethical",
+          "label": "Use a safe synthetic substitute",
+          "outcome": "It tastes terrible, but nobody is harmed and the hunger finally quiets.",
+          "effects": {
+            "stats": {
+              "happiness": 2,
+              "resilience": 6
+            }
+          }
+        },
+        {
+          "id": "endure",
+          "label": "Try to endure it",
+          "outcome": "You keep control, but the effort leaves you drained and irritable.",
+          "effects": {
+            "stats": {
+              "health": -4,
+              "happiness": -5,
+              "resilience": 4
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

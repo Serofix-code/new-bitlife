@@ -1,0 +1,15 @@
+{
+  "dataVersion": "1.6.0",
+  "files": [
+    "data/catalogs.json",
+    "data/events/childhood.json",
+    "data/events/education.json",
+    "data/events/work.json",
+    "data/events/relationships.json",
+    "data/events/life.json",
+    "data/events/activities.json",
+    "data/events/vampire.json",
+    "data/events/expanded.json",
+    "data/events/wizard.json"
+  ]
+}

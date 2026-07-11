@@ -1,0 +1,12 @@
+{
+  "name": "next-chapter-life-sim",
+  "version": "2.1.0",
+  "private": true,
+  "description": "An original, offline-first browser life simulator.",
+  "scripts": {
+    "sync-data": "node tools/sync-data.mjs",
+    "test": "node tests/run-tests.mjs",
+    "serve": "python server.py --no-browser",
+    "serve:phone": "python server.py"
+  }
+}
