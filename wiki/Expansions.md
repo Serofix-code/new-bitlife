@@ -8,6 +8,7 @@ The **Expansions** menu contains optional deep systems that add long-term gamepl
 - [Crypto Expansion](Crypto-Expansion)
 - [Business Expansion](Business-Expansion)
 - [Renting and Landlords](Renting-and-Landlords)
+- [Vampire Expansion](Vampire-Expansion)
 
 Expansion assets contribute to net worth. Investments, crypto holdings, businesses, and landlord properties can pass into later generations.
 

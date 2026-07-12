@@ -29,4 +29,14 @@ The Developer menu contains testing controls for age, stats, money, events, rela
 - Max every v2.3 expansion and public-life system
 - Clear crypto, businesses, leases, and landlord properties
 
+## Healthcare, surgery, and vampire controls
+
+- Make every elective procedure succeed
+- Make elective procedures free
+- Give vampires unlimited essence
+- Make vampire actions always succeed
+- Complete the Vampire Lord trials
+- Max all v2.4 systems
+- Clear procedure and malpractice history
+
 Developer actions can heavily change game balance and are intended for testing and customization.

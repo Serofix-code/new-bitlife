@@ -1,8 +1,8 @@
 (function installOfflineData(global) {
   "use strict";
   global.NextChapter.DATA_BUNDLE = {
-  "dataVersion": "1.8.0",
-  "generatedAt": "2026-07-11T20:57:35.541Z",
+  "dataVersion": "1.9.0",
+  "generatedAt": "2026-07-11T22:27:26.797Z",
   "files": [
     {
       "kind": "catalogs",
@@ -137,7 +137,13 @@
           "currencySymbol": "kr",
           "currencyLocale": "nb-NO",
           "fxPerUsd": 9.753718,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "tuition_free",
+          "collegeLabel": "Tuition-free public college",
+          "collegeCostMultiplier": 0
         },
         {
           "id": "france",
@@ -269,7 +275,13 @@
           "currencySymbol": "€",
           "currencyLocale": "fr-FR",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "low_fee",
+          "collegeLabel": "Low public tuition",
+          "collegeCostMultiplier": 0.15
         },
         {
           "id": "usa",
@@ -401,7 +413,13 @@
           "currencySymbol": "$",
           "currencyLocale": "en-US",
           "fxPerUsd": 1,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "private",
+          "healthcareLabel": "Private insurance system",
+          "healthcareCostMultiplier": 1,
+          "collegeModel": "full_fee",
+          "collegeLabel": "Full tuition",
+          "collegeCostMultiplier": 1
         },
         {
           "id": "sweden",
@@ -531,7 +549,13 @@
           "currencySymbol": "kr",
           "currencyLocale": "sv-SE",
           "fxPerUsd": 9.636483,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "tuition_free",
+          "collegeLabel": "Tuition-free public college",
+          "collegeCostMultiplier": 0
         },
         {
           "id": "denmark",
@@ -660,7 +684,13 @@
           "currencySymbol": "kr",
           "currencyLocale": "da-DK",
           "fxPerUsd": 6.539895,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "tuition_free",
+          "collegeLabel": "Tuition-free public college",
+          "collegeCostMultiplier": 0
         },
         {
           "id": "uk",
@@ -792,7 +822,13 @@
           "currencySymbol": "£",
           "currencyLocale": "en-GB",
           "fxPerUsd": 0.745013,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "high_fee",
+          "collegeLabel": "Public loans and high tuition",
+          "collegeCostMultiplier": 0.85
         },
         {
           "id": "ireland",
@@ -921,7 +957,13 @@
           "currencySymbol": "€",
           "currencyLocale": "en-IE",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "mixed",
+          "healthcareLabel": "Mixed public healthcare",
+          "healthcareCostMultiplier": 0.45,
+          "collegeModel": "subsidized",
+          "collegeLabel": "Subsidized public college",
+          "collegeCostMultiplier": 0.5
         },
         {
           "id": "finland",
@@ -1051,7 +1093,13 @@
           "currencySymbol": "€",
           "currencyLocale": "fi-FI",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "tuition_free",
+          "collegeLabel": "Tuition-free public college",
+          "collegeCostMultiplier": 0
         },
         {
           "id": "russia",
@@ -1181,7 +1229,13 @@
           "currencySymbol": "₽",
           "currencyLocale": "ru-RU",
           "fxPerUsd": 76.6647,
-          "fxReferenceDate": "2026-07-11"
+          "fxReferenceDate": "2026-07-11",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "subsidized",
+          "collegeLabel": "Subsidized public college",
+          "collegeCostMultiplier": 0.2
         },
         {
           "id": "germany",
@@ -1288,7 +1342,13 @@
           "currencySymbol": "€",
           "currencyLocale": "de-DE",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "insured",
+          "healthcareLabel": "Public insurance healthcare",
+          "healthcareCostMultiplier": 0.2,
+          "collegeModel": "tuition_free",
+          "collegeLabel": "Tuition-free public college",
+          "collegeCostMultiplier": 0
         },
         {
           "id": "spain",
@@ -1395,7 +1455,13 @@
           "currencySymbol": "€",
           "currencyLocale": "es-ES",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "low_fee",
+          "collegeLabel": "Low public tuition",
+          "collegeCostMultiplier": 0.2
         },
         {
           "id": "italy",
@@ -1502,7 +1568,13 @@
           "currencySymbol": "€",
           "currencyLocale": "it-IT",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "low_fee",
+          "collegeLabel": "Low public tuition",
+          "collegeCostMultiplier": 0.25
         },
         {
           "id": "netherlands",
@@ -1607,7 +1679,13 @@
           "currencySymbol": "€",
           "currencyLocale": "nl-NL",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "insured",
+          "healthcareLabel": "Mandatory insurance healthcare",
+          "healthcareCostMultiplier": 0.35,
+          "collegeModel": "subsidized",
+          "collegeLabel": "Subsidized public college",
+          "collegeCostMultiplier": 0.35
         },
         {
           "id": "belgium",
@@ -1712,7 +1790,13 @@
           "currencySymbol": "€",
           "currencyLocale": "nl-BE",
           "fxPerUsd": 0.874891,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "insured",
+          "healthcareLabel": "Public insurance healthcare",
+          "healthcareCostMultiplier": 0.25,
+          "collegeModel": "low_fee",
+          "collegeLabel": "Low public tuition",
+          "collegeCostMultiplier": 0.2
         },
         {
           "id": "switzerland",
@@ -1817,7 +1901,13 @@
           "currencySymbol": "CHF",
           "currencyLocale": "de-CH",
           "fxPerUsd": 0.801234,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "insured",
+          "healthcareLabel": "Mandatory insurance healthcare",
+          "healthcareCostMultiplier": 0.4,
+          "collegeModel": "low_fee",
+          "collegeLabel": "Low public tuition",
+          "collegeCostMultiplier": 0.25
         },
         {
           "id": "canada",
@@ -1924,7 +2014,13 @@
           "currencySymbol": "$",
           "currencyLocale": "en-CA",
           "fxPerUsd": 1.359412,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "subsidized",
+          "collegeLabel": "Subsidized public college",
+          "collegeCostMultiplier": 0.6
         },
         {
           "id": "australia",
@@ -2031,7 +2127,13 @@
           "currencySymbol": "$",
           "currencyLocale": "en-AU",
           "fxPerUsd": 1.486275,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "mixed",
+          "healthcareLabel": "Mixed public healthcare",
+          "healthcareCostMultiplier": 0.3,
+          "collegeModel": "subsidized",
+          "collegeLabel": "Subsidized public college",
+          "collegeCostMultiplier": 0.65
         },
         {
           "id": "japan",
@@ -2138,7 +2240,13 @@
           "currencySymbol": "¥",
           "currencyLocale": "ja-JP",
           "fxPerUsd": 161.3375,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "insured",
+          "healthcareLabel": "Public insurance healthcare",
+          "healthcareCostMultiplier": 0.3,
+          "collegeModel": "high_fee",
+          "collegeLabel": "Public and private tuition",
+          "collegeCostMultiplier": 0.75
         },
         {
           "id": "south-korea",
@@ -2245,7 +2353,13 @@
           "currencySymbol": "₩",
           "currencyLocale": "ko-KR",
           "fxPerUsd": 1385.402,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "insured",
+          "healthcareLabel": "Public insurance healthcare",
+          "healthcareCostMultiplier": 0.3,
+          "collegeModel": "high_fee",
+          "collegeLabel": "Public and private tuition",
+          "collegeCostMultiplier": 0.75
         },
         {
           "id": "poland",
@@ -2352,7 +2466,13 @@
           "currencySymbol": "zł",
           "currencyLocale": "pl-PL",
           "fxPerUsd": 3.872411,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "low_fee",
+          "collegeLabel": "Low public tuition",
+          "collegeCostMultiplier": 0.2
         },
         {
           "id": "iceland",
@@ -2456,7 +2576,13 @@
           "currencySymbol": "kr",
           "currencyLocale": "is-IS",
           "fxPerUsd": 124.7321,
-          "fxReferenceDate": "2026-07-10"
+          "fxReferenceDate": "2026-07-10",
+          "healthcareModel": "public",
+          "healthcareLabel": "Public healthcare",
+          "healthcareCostMultiplier": 0,
+          "collegeModel": "tuition_free",
+          "collegeLabel": "Tuition-free public college",
+          "collegeCostMultiplier": 0
         }
       ],
       "upbringings": [

@@ -4,7 +4,7 @@
 
 Create a character, progress through an entire lifetime, make choices, build relationships, pursue education and careers, manage money and property, experience supernatural paths, and continue the family story across generations.
 
-## Current version: 2.3.0
+## Current version: 2.4.0
 
 ### Life updates
 
@@ -48,6 +48,24 @@ Age progression now creates compact headlines inside the Life Journal. These can
 - Deposits, yearly rent, leases, and moving out
 - Buy income-producing flats, houses, duplexes, and apartment blocks
 - Tenants, vacancies, maintenance, renovations, appreciation, and property sales
+
+
+### Public services and elective care
+
+- Country-based healthcare and higher-education funding
+- Parent-paid Health & Mind activities for children
+- Orphanage care using country coverage without a family sponsor
+- Country-adjusted college tuition
+- Adult surgery clinic with fictional surgeons, reputation, costs, procedure limits, outcomes, and malpractice claims
+- One-time gender-affirming care that can update identity and pronouns while keeping reproductive role separate
+
+### Vampire Expansion overhaul
+
+- Aristocrat disguise and separate True Vampire form
+- Essence, secrecy, notoriety, Maker, curse, and three randomized trials
+- Permanent stat-lock power and Vampire Lord progression
+- Abstract night hunting, progeny, familiars, hypnosis, lairs, and castles
+- Biological family-building disabled after vampirism; adoption remains available
 
 ### Richer social media and fame
 

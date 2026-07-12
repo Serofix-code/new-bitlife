@@ -106,6 +106,7 @@ for (const relative of [
   "js/core/v20.js",
   "js/core/v21.js",
   "js/core/v23.js",
+  "js/core/v24.js",
   "js/ui/render.js",
   "js/ui/expansion-view.js",
   "js/ui/v16-view.js",
@@ -114,7 +115,8 @@ for (const relative of [
   "js/ui/v19-view.js",
   "js/ui/v20-view.js",
   "js/ui/v21-view.js",
-  "js/ui/v23-view.js"
+  "js/ui/v23-view.js",
+  "js/ui/v24-view.js"
 ]) {
   vm.runInContext(await fs.readFile(path.join(root, relative), "utf8"), context, { filename: relative });
 }
@@ -146,6 +148,7 @@ vm.runInContext(await fs.readFile(path.join(root, "js/ui/v19-app.js"), "utf8"), 
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v20-app.js"), "utf8"), context, { filename: "js/ui/v20-app.js" });
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v21-app.js"), "utf8"), context, { filename: "js/ui/v21-app.js" });
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v23-app.js"), "utf8"), context, { filename: "js/ui/v23-app.js" });
+vm.runInContext(await fs.readFile(path.join(root, "js/ui/v24-app.js"), "utf8"), context, { filename: "js/ui/v24-app.js" });
 const startupApp = new NC.AppController({ catalogs: { origins: [{ id: "test", firstNames: ["A"], lastNames: ["B"] }], upbringings: [{ id: "test" }] } }, {});
 assert.equal(startupApp.game, null);
 assert.equal(startupApp.tab, "life");
@@ -670,5 +673,62 @@ assert.match(guideHtml, /compact age-up updates/i);
 for (const wikiPage of ["Life-Updates.md", "Crypto-Expansion.md", "Business-Expansion.md", "Renting-and-Landlords.md", "Social-Media-and-Fame.md"]) {
   await fs.access(path.join(root, "wiki", wikiPage));
 }
+
+
+// v2.4 country funding, surgery, and vampire expansion.
+const fundedChild = new NC.GameEngine(data);
+fundedChild.createCharacter({ firstName: "Freja", lastName: "Public", identity: "woman", reproductiveRole: "carry", originId: "norway", upbringingId: "bookish", occult: "human", seed: "v24-funded-child" });
+fundedChild.state.age = 12;
+fundedChild.state.activityPoints = 5;
+fundedChild.state.finances.cash = 0;
+const childDoctor = fundedChild.activityOptionEstimate("wellness", "doctor");
+assert.equal(childDoctor.cost, 0, "a child with a living parent sponsor should not personally pay for healthcare");
+assert.equal(childDoctor.allowed, true);
+fundedChild.performDynamicActivity("wellness", "doctor");
+assert.equal(fundedChild.state.finances.cash, 0);
+
+const orphanCare = new NC.GameEngine(data);
+orphanCare.createCharacter({ firstName: "Alex", lastName: "Orphan", identity: "nonbinary", reproductiveRole: "assisted", originId: "usa", upbringingId: "bookish", occult: "human", seed: "v24-orphan-care" });
+orphanCare.state.age = 12;
+orphanCare.state.flags.orphanage = true;
+orphanCare.state.relationships.filter((person) => person.role === "parent").forEach((person) => { person.alive = false; });
+assert.ok(orphanCare.activityOptionEstimate("wellness", "doctor").cost > 0, "an orphanage child should use country coverage rather than a parent sponsor");
+
+const tuitionGame = new NC.GameEngine(data);
+tuitionGame.createCharacter({ firstName: "Lina", lastName: "Student", identity: "woman", reproductiveRole: "carry", originId: "germany", upbringingId: "bookish", occult: "human", seed: "v24-college" });
+tuitionGame.state.age = 18;
+tuitionGame.state.education.credentials = ["primary", "secondary"];
+const college = data.catalogs.education.find((item) => item.id === "college");
+assert.equal(tuitionGame.educationAnnualCost(college), 0, "Germany should use the simplified tuition-free public college model");
+
+const surgeryGame = new NC.GameEngine(data);
+surgeryGame.createCharacter({ firstName: "Mira", lastName: "Clinic", identity: "nonbinary", reproductiveRole: "both", originId: "france", upbringingId: "bookish", occult: "human", seed: "v24-surgery" });
+surgeryGame.state.age = 30;
+surgeryGame.state.activityPoints = 20;
+surgeryGame.state.finances.cash = 1000000;
+surgeryGame.state.dev.surgeryAlwaysSucceeds = true;
+const noseDoctor = surgeryGame.surgeonOffers("nose")[1];
+const lookBefore = surgeryGame.state.stats.looks;
+const surgeryResult = surgeryGame.performCosmeticProcedure("nose", noseDoctor.id);
+assert.equal(surgeryResult.success, true);
+assert.ok(surgeryGame.state.stats.looks >= lookBefore);
+assert.ok(NC.View.cosmeticModal({ game: surgeryGame, data, store, modal: { type: "v24-cosmetic" } }).includes("Surgery Clinic"));
+
+const vampireGame = new NC.GameEngine(data);
+vampireGame.createCharacter({ firstName: "Vale", lastName: "Nocturne", identity: "woman", reproductiveRole: "carry", originId: "france", upbringingId: "bookish", occult: "vampire", seed: "v24-vampire" });
+vampireGame.state.age = 30;
+vampireGame.state.activityPoints = 20;
+vampireGame.state.finances.cash = 5000000;
+vampireGame.ensureExpansionState();
+assert.ok(vampireGame.state.vampire.goals.length === 3);
+assert.equal(vampireGame.familyMethodEstimate("natural").allowed, false, "vampires should not use biological family-building routes");
+vampireGame.state.dev.vampireAlwaysSucceeds = true;
+const huntResult = vampireGame.vampireHunt("old_quarter", "befriend");
+assert.equal(huntResult.success, true);
+vampireGame.buyVampireProperty("lair");
+assert.equal(vampireGame.state.vampire.properties.length, 1);
+vampireGame.vampireChooseLockedStat("looks");
+assert.equal(vampireGame.state.stats.looks, 100);
+assert.ok(NC.View.vampireModal({ game: vampireGame, data, store, modal: { type: "v24-vampire" } }).includes("Vampire Expansion"));
 
 console.log(`All tests passed: ${events.length} events, ${catalogs.jobs.length} jobs, ${catalogs.assets.length} assets, lifecycle, fertility, dynamic activities, investments, crypto, businesses, landlords, social/fame, age-up headlines, wiki, save, and inheritance checks.`);

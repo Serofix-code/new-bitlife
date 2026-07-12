@@ -33,3 +33,8 @@ Next Chapter includes twenty-one countries with localized currencies, flags, nam
 ## Jail override
 
 An active prison sentence replaces outside gameplay with jail-only options. External jobs, trading, business management, landlord management, and ordinary Activities remain blocked until release.
+
+
+## Country funding
+
+Healthcare and higher-education costs use simplified country policies. Children with living parents do not personally pay Health & Mind costs, while orphanage care uses country coverage without a family sponsor.

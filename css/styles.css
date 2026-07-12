@@ -4182,3 +4182,128 @@ html[data-theme="light"] .v19-contraception.selected { background: #d8f3fb !impo
   .v23-feed-caption { display: block; }
   .v23-feed-caption small { display: block; text-align: left; margin-top: .15rem; }
 }
+
+/* v2.4 healthcare, surgery and vampire systems */
+.v24-policy-box { margin: 0 0 1rem; }
+.v24-policy-card,
+.v24-cosmetic-entry,
+.v24-curse,
+.v24-current-policy {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding: .95rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  margin-bottom: 1rem;
+}
+.v24-policy-card > span,
+.v24-curse > span,
+.v24-entry-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(45, 212, 191, .12);
+  font-size: 1.45rem;
+  flex: 0 0 auto;
+}
+.v24-policy-card h3,
+.v24-cosmetic-entry h3,
+.v24-curse h3 { margin: 0 0 .2rem; }
+.v24-policy-card p,
+.v24-cosmetic-entry p,
+.v24-curse p { margin: 0; color: var(--muted); }
+.v24-cosmetic-entry { justify-content: space-between; }
+.v24-cosmetic-entry > div { display: flex; align-items: center; gap: .85rem; }
+.v24-procedure-list { display: grid; gap: .9rem; margin: 1rem 0; }
+.v24-procedure-card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: .9rem;
+  background: var(--surface);
+}
+.v24-procedure-card header { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; }
+.v24-procedure-card header > span { font-size: 1.5rem; }
+.v24-procedure-card h3 { margin: 0; }
+.v24-procedure-card p { margin: .15rem 0 0; color: var(--muted); }
+.v24-doctor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; }
+.v24-surgeon-choice {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: inherit;
+  border-radius: 14px;
+  padding: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .7rem;
+  text-align: left;
+}
+.v24-surgeon-choice:hover:not(:disabled) { transform: translateY(-1px); border-color: rgba(45,212,191,.45); }
+.v24-surgeon-choice small { display: block; color: var(--muted); margin-top: .15rem; }
+.v24-surgeon-choice b { color: var(--accent, #2dd4bf); }
+.v24-surgery-history li { grid-template-columns: auto 1fr auto; }
+.v24-vampire-dialog { max-width: 980px; }
+.v24-vampire-forms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: start;
+}
+.v24-vampire-forms .card-actions { grid-column: 1 / -1; }
+.v24-vampire-avatar {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: .8rem;
+  background: linear-gradient(145deg, rgba(76,29,149,.12), rgba(127,29,29,.08));
+  text-align: center;
+}
+.v24-vampire-avatar img { width: 112px; height: 112px; border-radius: 28px; display: block; margin: 0 auto .5rem; }
+.v24-vampire-goals ul { display: grid; gap: .5rem; padding: 0; list-style: none; }
+.v24-vampire-goals li { display: flex; gap: .7rem; align-items: center; padding: .7rem .8rem; border-radius: 12px; background: rgba(255,255,255,.03); }
+.v24-vampire-goals li.complete { background: rgba(34,197,94,.1); }
+.v24-hunt-list,
+.v24-target-list,
+.v24-familiar-list,
+.v24-property-list { display: grid; gap: .7rem; }
+.v24-hunt-card,
+.v24-property-card,
+.v24-familiar,
+.v24-target-row {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: .8rem;
+  background: rgba(255,255,255,.03);
+  color: inherit;
+  text-align: left;
+}
+.v24-hunt-card > span,
+.v24-property-card > span { font-size: 1.5rem; }
+.v24-hunt-card > div:nth-child(2),
+.v24-property-card > div:nth-child(2),
+.v24-target-row > div,
+.v24-familiar > div:first-child { flex: 1; }
+.v24-hunt-card h3,
+.v24-property-card h3 { margin: 0; }
+.v24-hunt-card p,
+.v24-property-card p { margin: .15rem 0 0; color: var(--muted); }
+.v24-target-row img { width: 46px; height: 46px; border-radius: 14px; }
+.v24-target-row small,
+.v24-familiar small { display: block; color: var(--muted); margin-top: .15rem; }
+.v24-target-row b { margin-left: auto; }
+@media (max-width: 720px) {
+  .v24-doctor-grid,
+  .v24-vampire-forms { grid-template-columns: 1fr; }
+  .v24-vampire-forms .card-actions { grid-column: auto; }
+  .v24-cosmetic-entry,
+  .v24-hunt-card,
+  .v24-property-card,
+  .v24-familiar { align-items: flex-start; flex-direction: column; }
+}
