@@ -4307,3 +4307,337 @@ html[data-theme="light"] .v19-contraception.selected { background: #d8f3fb !impo
   .v24-property-card,
   .v24-familiar { align-items: flex-start; flex-direction: column; }
 }
+
+/* v2.5 enterprises, collections, and special careers */
+.v25-expansion-hub {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--surface);
+}
+.v25-enterprise-card,
+.v25-collectible-card,
+.v25-career-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1rem;
+  background: var(--surface);
+}
+.v25-enterprise-card > header,
+.v25-collectible-card > header,
+.v25-career-card > header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .8rem;
+}
+.v25-enterprise-card > header > span,
+.v25-collectible-card > header > span,
+.v25-career-card > header > span {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  font-size: 1.5rem;
+}
+.v25-enterprise-card h3,
+.v25-collectible-card h3,
+.v25-career-card h3 {
+  margin: 0;
+}
+.v25-enterprise-card p,
+.v25-collectible-card p,
+.v25-career-card p {
+  margin: .15rem 0 0;
+  color: var(--muted);
+}
+.v25-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: .55rem;
+  margin: .8rem 0;
+}
+.v25-metric-grid span {
+  display: flex;
+  justify-content: space-between;
+  gap: .6rem;
+  padding: .6rem .7rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  font-size: .82rem;
+}
+.v25-metric-grid b {
+  color: var(--text);
+  text-align: right;
+}
+.v25-auction-lot {
+  align-items: center;
+}
+.v25-progress {
+  display: grid;
+  gap: .4rem;
+  margin: 1rem 0;
+}
+.v25-progress span {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: .84rem;
+}
+.v25-progress progress {
+  width: 100%;
+  height: 10px;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.v25-progress progress::-webkit-progress-bar {
+  background: rgba(255,255,255,.08);
+}
+.v25-progress progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #22c55e, #38bdf8);
+}
+@media (max-width: 640px) {
+  .v25-enterprise-card > header,
+  .v25-collectible-card > header,
+  .v25-career-card > header {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .v25-enterprise-card > header > strong,
+  .v25-collectible-card > header > strong,
+  .v25-career-card > header > strong {
+    grid-column: 2;
+  }
+}
+
+/* v2.6 popup refresh */
+.nc-popup-dialog,
+.dialog {
+  width: min(660px, calc(100vw - 26px)) !important;
+  max-height: min(88vh, 920px) !important;
+  overflow: auto;
+  position: relative;
+  border-radius: 28px !important;
+  border: 6px solid #ff4a00 !important;
+  background: linear-gradient(180deg, #1c1e23 0%, #181a1f 100%) !important;
+  color: #f1f5f9 !important;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.64), 0 0 0 1px rgba(255,255,255,.06) inset !important;
+}
+
+.modal-backdrop {
+  background: rgba(4, 10, 18, 0.80) !important;
+  backdrop-filter: blur(8px);
+}
+
+.dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1rem;
+  padding: 1.15rem 1.25rem 1rem 1.25rem !important;
+  border-bottom: 0 !important;
+  background: linear-gradient(90deg, #63201a 0%, #b42914 54%, #ff4a00 100%) !important;
+  color: #fff !important;
+}
+
+.dialog-header h2,
+.dialog-header .card-subtitle,
+.dialog-header p { color: #fff !important; }
+.dialog-header h2 { font-size: 1.85rem !important; font-weight: 900; letter-spacing: .01em; }
+.dialog-header .card-subtitle { opacity: .92; }
+
+.dialog-body {
+  padding: 1.15rem 1.25rem 1.35rem !important;
+  color: #f2f7ff !important;
+}
+
+.icon-button[data-action="close-modal"] {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  z-index: 4;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px !important;
+  border: 3px solid #b7bfc9 !important;
+  background: #f7f8fa !important;
+  color: #ff4a00 !important;
+  font-size: 1.7rem !important;
+  font-weight: 900 !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
+
+.nc-popup-badge {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nc-popup-avatar {
+  display: grid;
+  place-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  background: #ffdb17;
+  color: #1a1d22;
+  font-size: 2rem;
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,.28);
+}
+
+.nc-event-copy,
+.event-text {
+  color: #f1f5f9 !important;
+  font-size: 1.06rem;
+  line-height: 1.5;
+}
+
+.dialog .button,
+.dialog .choice-button {
+  border-radius: 16px !important;
+}
+
+.dialog .button,
+.choice-button {
+  background: #0c88e8 !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 10px 20px rgba(8, 64, 106, .28);
+}
+
+.dialog .button.ghost { background: #4d5560 !important; }
+.dialog .button.secondary { background: #0c88e8 !important; }
+.dialog .button.danger { background: #c53a2f !important; }
+.dialog .button.small { border-radius: 14px !important; }
+
+.choice-list,
+.nc-choice-list {
+  display: grid;
+  gap: 0.95rem;
+  margin-top: 1.25rem;
+}
+
+.choice-button {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.1rem !important;
+  font-size: 1rem;
+  font-weight: 800 !important;
+  text-align: left;
+}
+
+.choice-button:hover:not(:disabled),
+.dialog .button:hover:not(:disabled) {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.choice-button:disabled,
+.dialog .button:disabled {
+  opacity: .55 !important;
+}
+
+.outcome-box,
+.dialog .hint-box,
+.dialog .save-slot,
+.dialog .shop-card,
+.dialog .mini-card,
+.dialog .v23-start-card,
+.dialog .v23-owned-card,
+.dialog .v24-procedure-card,
+.dialog .v24-property-card,
+.dialog .v24-hunt-card,
+.dialog .v16-market-card {
+  border-radius: 18px !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  background: #20242a !important;
+  color: #f1f5f9 !important;
+}
+
+.outcome-box strong,
+.dialog .hint-box strong { color: #7ed6ff !important; }
+
+.effect-chip {
+  background: rgba(45, 175, 91, .16) !important;
+  color: #77f3a1 !important;
+}
+.effect-chip.negative {
+  background: rgba(255, 88, 88, .14) !important;
+  color: #ff8d8d !important;
+}
+
+.nc-popup-actions { justify-content: center !important; margin-top: 1rem; }
+
+.nc-changelog-version {
+  margin: 0 0 1rem;
+  padding: .8rem 1rem;
+  border-radius: 16px;
+  background: #13161b;
+  border: 1px solid rgba(255,255,255,.08);
+  color: #cfe8ff;
+}
+
+.nc-changelog-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.nc-changelog-card {
+  padding: 1rem 1rem .95rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: #20242a;
+}
+
+.nc-changelog-card header {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  margin-bottom: .6rem;
+}
+
+.nc-changelog-card header strong {
+  color: #6dd6ff;
+  font-size: 1.05rem;
+}
+
+.nc-changelog-card header span {
+  color: #fff;
+  font-weight: 700;
+}
+
+.nc-changelog-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #dde8f7;
+}
+
+.nc-changelog-card li + li { margin-top: .42rem; }
+
+.dialog .section-head h3,
+.dialog h3,
+.dialog h4,
+.dialog strong,
+.dialog .status-pill,
+.dialog .price,
+.dialog .v16-main-menu-item strong { color: #d7f1ff !important; }
+
+.dialog .v16-main-menu-item,
+.dialog .v16-city-choice,
+.dialog .heir-button {
+  border-radius: 16px !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  margin-bottom: .7rem;
+  background: #20242a !important;
+  color: #fff !important;
+}
+
+.dialog .v16-main-menu-item b,
+.dialog .v16-city-choice span:last-child,
+.dialog .heir-button span:last-child { color: #79d6ff !important; }

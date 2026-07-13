@@ -1,10 +1,14 @@
+## Next Chapter v2.6.0
+
+This update refreshes in-game popup styling and adds a built-in changelog screen.
+
 # Next Chapter
 
 **Next Chapter** is an original, offline-first browser life simulator by **Serofix**.
 
 Create a character, progress through an entire lifetime, make choices, build relationships, pursue education and careers, manage money and property, experience supernatural paths, and continue the family story across generations.
 
-## Current version: 2.4.0
+## Current version: 2.5.0
 
 ### Life updates
 
@@ -49,6 +53,25 @@ Age progression now creates compact headlines inside the Life Journal. These can
 - Buy income-producing flats, houses, duplexes, and apartment blocks
 - Tenants, vacancies, maintenance, renovations, appreciation, and property sales
 
+#### Major Enterprise Expansion
+
+- Open and manage culture museums, wildlife sanctuaries, or entertainment resorts
+- Reputation, appeal, security, specialist quality, staffing, inspections, annual revenue, profit, and value
+- Facility upgrades, advertising, hiring, security reviews, specialist improvements, public events, and sales
+- Museums can display owned collectibles
+
+#### Collections & Auctions Expansion
+
+- Ten changing fictional auction lots per year
+- Artwork, historical curios, sports memorabilia, jewelry, and science collectibles
+- Rarity, uncertain authenticity, appraisals, market value changes, private sales, and museum displays
+
+#### Special Careers Expansion
+
+- Space explorer, professional model, screen performer, recording artist, professional athlete, public service, and intelligence careers
+- Applications, training, networking, opportunities, ranks, reputation, performance, income, and awards
+- Annual career headlines inside the Life Journal
+
 
 ### Public services and elective care
 
@@ -82,6 +105,7 @@ Fame now tracks public image, press mentions, awards, endorsements, and fan even
 - Family building, contraception, medical routes, surrogacy, and adoption
 - Homes, possessions, debt, upkeep, appreciation, and depreciation
 - Twenty-one countries with localized cities, currencies, names, and flags
+- Managed museums, wildlife sanctuaries, entertainment resorts, auctions, collectibles, and special careers
 - Crime, court, prison, appeals, parole, and fugitive states
 - Magic, vampirism, time travel, and inheritance across generations
 - Multi-user local accounts, saves, ribbons, and challenges

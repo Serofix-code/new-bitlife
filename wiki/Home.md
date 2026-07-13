@@ -19,7 +19,16 @@ Next Chapter is an original, offline-first browser life simulator. Create a char
 - [Crypto Expansion](Crypto-Expansion)
 - [Business Expansion](Business-Expansion)
 - [Renting and Landlords](Renting-and-Landlords)
+- [Major Enterprise Expansion](Major-Enterprise-Expansion)
+- [Collections and Auctions](Collections-and-Auctions)
+- [Special Careers](Special-Careers)
 - [Accounts, Saves, Challenges, and Ribbons](Accounts-Saves-and-Ribbons)
 - [Developer Cheats](Developer-Cheats)
 
 The website also includes `guide.html`, which presents the game guide directly beside the simulator.
+
+
+## New in v2.6.0
+- Unified popup styling
+- In-game changelog screen
+- Main menu changelog shortcut

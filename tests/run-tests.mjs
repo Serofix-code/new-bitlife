@@ -107,6 +107,7 @@ for (const relative of [
   "js/core/v21.js",
   "js/core/v23.js",
   "js/core/v24.js",
+  "js/core/v25.js",
   "js/ui/render.js",
   "js/ui/expansion-view.js",
   "js/ui/v16-view.js",
@@ -116,7 +117,8 @@ for (const relative of [
   "js/ui/v20-view.js",
   "js/ui/v21-view.js",
   "js/ui/v23-view.js",
-  "js/ui/v24-view.js"
+  "js/ui/v24-view.js",
+  "js/ui/v25-view.js"
 ]) {
   vm.runInContext(await fs.readFile(path.join(root, relative), "utf8"), context, { filename: relative });
 }
@@ -731,4 +733,30 @@ vampireGame.vampireChooseLockedStat("looks");
 assert.equal(vampireGame.state.stats.looks, 100);
 assert.ok(NC.View.vampireModal({ game: vampireGame, data, store, modal: { type: "v24-vampire" } }).includes("Vampire Expansion"));
 
-console.log(`All tests passed: ${events.length} events, ${catalogs.jobs.length} jobs, ${catalogs.assets.length} assets, lifecycle, fertility, dynamic activities, investments, crypto, businesses, landlords, social/fame, age-up headlines, wiki, save, and inheritance checks.`);
+
+
+// v2.5 major enterprises, collections, and special careers.
+const v25Game = new NC.GameEngine(data);
+v25Game.createCharacter({ firstName: "Nova", lastName: "Vale", identity: "woman", originId: "france", upbringingId: "bookish", occult: "human", specialTalent: "business", seed: "v25-systems" });
+v25Game.devSetAge(30);
+v25Game.state.finances.cash = 50000000;
+v25Game.state.activityPoints = 20;
+v25Game.state.dev.specialCareerAlwaysSucceeds = true;
+const museum = v25Game.startEnterprise("museum", "Vale Museum");
+assert.equal(v25Game.state.enterprises.owned.length, 1, "major enterprise should be created");
+v25Game.enterpriseAction(museum.id, "improve");
+assert.ok(museum.appeal > 45, "enterprise upgrade should improve appeal");
+const firstLot = v25Game.state.collections.market[0];
+const collectible = v25Game.buyCollectible(firstLot.id);
+assert.equal(v25Game.state.collections.owned.length, 1, "auction purchase should add a collectible");
+v25Game.appraiseCollectible(collectible.id);
+v25Game.displayCollectible(collectible.id, museum.id);
+assert.equal(collectible.displayedAt, museum.id, "collectible should be displayable in a museum");
+const career = v25Game.startSpecialCareer("astronaut");
+assert.ok(career, "developer success control should guarantee special-career entry");
+v25Game.specialCareerAction("work");
+assert.ok(v25Game.state.specialCareer.completedActions >= 1, "successful special-career opportunity should be recorded");
+assert.ok(v25Game.enterprisePortfolioValue() > 0 && v25Game.collectionPortfolioValue() > 0, "v2.5 assets should have portfolio value");
+assert.ok(typeof NC.View.enterpriseModal === "function" && typeof NC.View.collectionModal === "function" && typeof NC.View.specialCareerModal === "function", "v2.5 expansion views should exist");
+
+console.log(`All tests passed: ${events.length} events, ${catalogs.jobs.length} jobs, ${catalogs.assets.length} assets, lifecycle, fertility, dynamic activities, investments, crypto, businesses, landlords, enterprises, auctions, special careers, social/fame, age-up headlines, wiki, save, and inheritance checks.`);

@@ -29,6 +29,15 @@ The Developer menu contains testing controls for age, stats, money, events, rela
 - Max every v2.3 expansion and public-life system
 - Clear crypto, businesses, leases, and landlord properties
 
+## Enterprises, collections, and special-career controls
+
+- Make every major enterprise profitable
+- Guarantee authentic auction collectibles
+- Make special-career applications and opportunities succeed
+- Add every current auction lot to the collection
+- Max all v2.5 systems
+- Clear enterprises, collections, and special-career progress
+
 ## Healthcare, surgery, and vampire controls
 
 - Make every elective procedure succeed
