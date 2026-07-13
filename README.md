@@ -1,14 +1,19 @@
-## Next Chapter v2.6.0
-
-This update refreshes in-game popup styling and adds a built-in changelog screen.
-
 # Next Chapter
 
 **Next Chapter** is an original, offline-first browser life simulator by **Serofix**.
 
 Create a character, progress through an entire lifetime, make choices, build relationships, pursue education and careers, manage money and property, experience supernatural paths, and continue the family story across generations.
 
-## Current version: 2.5.0
+## Current version: 2.7.0
+
+### Families, portraits, and the Life Journal
+
+- Every new character receives a full birth date and a randomized birth story.
+- Same-gender parent families use adoption or a clearly recorded blended-family history.
+- Click the character's name to open the Family Legacy, including living relatives, previous generations, and causes of death.
+- Relationship records now explain how deceased relatives died.
+- The character creator uses a richer cartoon portrait with more hairstyles, facial detail, and a corrected live preview for every appearance control.
+- Age Up always returns to the Life Journal, while the stats HUD stays on that screen instead of covering every page.
 
 ### Life updates
 
@@ -114,7 +119,7 @@ Fame now tracks public image, press mentions, awards, endorsements, and fan even
 
 ## Documentation
 
-The complete guide is available through the in-game **Game Guide & Wiki** option and the repository Wiki.
+The complete guide is available in `guide.html` and the repository Wiki.
 
 ## Technology
 

@@ -1,5 +1,9 @@
 # Life Updates
 
+## Birth and navigation
+
+The first journal entry records the character's name, full birth date, birthplace, and randomized reason or family circumstance. Pressing **Age** from any section now returns the player to the Life Journal before showing the year's updates. The stats HUD is limited to the Life screen so it does not cover education, career, relationship, or activity pages.
+
 The Life Journal combines major choice cards with smaller age-up headlines.
 
 Compact updates can appear for:

@@ -108,6 +108,8 @@ for (const relative of [
   "js/core/v23.js",
   "js/core/v24.js",
   "js/core/v25.js",
+  "js/core/v26.js",
+  "js/core/v27.js",
   "js/ui/render.js",
   "js/ui/expansion-view.js",
   "js/ui/v16-view.js",
@@ -118,7 +120,9 @@ for (const relative of [
   "js/ui/v21-view.js",
   "js/ui/v23-view.js",
   "js/ui/v24-view.js",
-  "js/ui/v25-view.js"
+  "js/ui/v25-view.js",
+  "js/ui/v26-view.js",
+  "js/ui/v27-view.js"
 ]) {
   vm.runInContext(await fs.readFile(path.join(root, relative), "utf8"), context, { filename: relative });
 }
@@ -457,6 +461,34 @@ assert.match(gameHtmlV16, /NEXT CHAPTER/i);
 const creatorHtml = NC.View.creator({ data, creatorDraft: { firstName: "Luna", lastName: "Aardal", identity: "woman", originId: "norway", upbringingId: "bookish", occult: "wizard", specialTalent: "none", skin: "#d8a47f", hair: "#4a3028", eye: "#49392f", accent: "#6a5acd", hairStyle: "long", accessory: "none" } });
 assert.match(creatorHtml, /assets\/flags\/norway\.png/);
 assert.match(creatorHtml, /Wizard \/ Witch/);
+assert.match(creatorHtml, /Appearance|Identity &amp; story|Identity & story/);
+assert.match(NC.Utils.avatarSvg({ skin: "#123456", hairStyle: "braids" }), /data:image\/svg\+xml/);
+
+// v2.7 birth records, parentage rules, legacy view, and relationship death causes.
+const familyOrigins = new Set();
+for (let index = 0; index < 40; index += 1) {
+  const originGame = new NC.GameEngine(data);
+  originGame.createCharacter({ firstName: "Origin", lastName: `Test${index}`, identity: "nonbinary", originId: "norway", upbringingId: "bookish", seed: `family-origin-${index}` });
+  assert.match(originGame.state.birth.date, /^\d{4}-\d{2}-\d{2}$/);
+  assert.ok(originGame.state.timeline.some((entry) => /was born on/i.test(entry.text)));
+  familyOrigins.add(originGame.state.birth.familyType);
+  const parents = originGame.state.relationships.filter((person) => person.role === "parent");
+  if (parents.length === 2 && parents[0].identity === parents[1].identity) {
+    assert.match(originGame.state.birth.familyType, /adopted|blended/i);
+    assert.ok(parents.some((parent) => /adoptive|step/.test(parent.parentType)), "same-gender parents need an adoption or blended-family history");
+  }
+}
+assert.ok(familyOrigins.size >= 2, "seeded lives should produce varied family origins");
+
+const legacyGame = new NC.GameEngine(data);
+legacyGame.createCharacter({ firstName: "Legacy", lastName: "Tester", identity: "woman", originId: "norway", upbringingId: "bookish", seed: "legacy-v27" });
+const lateRelative = legacyGame.state.relationships[0];
+lateRelative.alive = false;
+lateRelative.deathAge = lateRelative.age;
+lateRelative.deathCause = "a test illness";
+const legacyHtml = NC.View.familyLegacyModal({ game: legacyGame });
+assert.match(legacyHtml, /Family Legacy/);
+assert.match(legacyHtml, /a test illness/);
 
 
 // Dynamic fertility, family-building, age locks, and pronoun-template checks.

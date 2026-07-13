@@ -28,7 +28,11 @@ Next Chapter is an original, offline-first browser life simulator. Create a char
 The website also includes `guide.html`, which presents the game guide directly beside the simulator.
 
 
-## New in v2.6.0
-- Unified popup styling
-- In-game changelog screen
-- Main menu changelog shortcut
+## New in v2.7.0
+
+- Dated, randomized birth stories
+- Adoption and blended-family histories for same-gender parents
+- Clickable Family Legacy with relatives, ancestors, and causes of death
+- Richer cartoon portrait creator with a corrected live preview
+- Age Up returns to the Life Journal
+- Stats stay on the Life screen instead of covering every page
