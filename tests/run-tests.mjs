@@ -110,6 +110,7 @@ for (const relative of [
   "js/core/v25.js",
   "js/core/v26.js",
   "js/core/v27.js",
+  "js/core/v28.js",
   "js/ui/render.js",
   "js/ui/expansion-view.js",
   "js/ui/v16-view.js",
@@ -463,6 +464,18 @@ assert.match(creatorHtml, /assets\/flags\/norway\.png/);
 assert.match(creatorHtml, /Wizard \/ Witch/);
 assert.match(creatorHtml, /Appearance|Identity &amp; story|Identity & story/);
 assert.match(NC.Utils.avatarSvg({ skin: "#123456", hairStyle: "braids" }), /data:image\/svg\+xml/);
+const portraitSvg = (avatar) => decodeURIComponent(NC.Utils.avatarSvg(avatar).split(",").slice(1).join(","));
+assert.match(portraitSvg({ age: 0, identity: "woman" }), /data-stage="baby"/);
+assert.match(portraitSvg({ age: 4, identity: "man" }), /data-stage="baby"/);
+assert.match(portraitSvg({ age: 5, identity: "woman" }), /data-stage="child"/);
+assert.match(portraitSvg({ age: 12, identity: "nonbinary" }), /data-stage="child"/);
+assert.match(portraitSvg({ age: 13, identity: "man" }), /data-stage="teen"/);
+assert.match(portraitSvg({ age: 17, identity: "woman" }), /data-stage="teen"/);
+assert.match(portraitSvg({ age: 18, identity: "nonbinary" }), /data-stage="adult"/);
+assert.match(portraitSvg({ age: 70, identity: "woman" }), /data-stage="senior"/);
+assert.notEqual(portraitSvg({ age: 4, identity: "woman" }), portraitSvg({ age: 5, identity: "woman" }), "baby and child portraits must differ");
+assert.notEqual(portraitSvg({ age: 12, identity: "man" }), portraitSvg({ age: 13, identity: "man" }), "child and teen portraits must differ");
+assert.notEqual(portraitSvg({ age: 18, identity: "woman" }), portraitSvg({ age: 18, identity: "man" }), "identity-aware adult portraits must differ");
 
 // v2.7 birth records, parentage rules, legacy view, and relationship death causes.
 const familyOrigins = new Set();
@@ -482,6 +495,13 @@ assert.ok(familyOrigins.size >= 2, "seeded lives should produce varied family or
 
 const legacyGame = new NC.GameEngine(data);
 legacyGame.createCharacter({ firstName: "Legacy", lastName: "Tester", identity: "woman", originId: "norway", upbringingId: "bookish", seed: "legacy-v27" });
+assert.equal(legacyGame.state.profile.avatar.age, 0);
+assert.ok(legacyGame.state.relationships.every((person) => person.avatar.age === person.age), "NPC portrait ages must match NPC ages at birth");
+legacyGame.devSetAge(13);
+assert.equal(legacyGame.state.profile.avatar.age, 13, "developer age changes must update the portrait stage");
+const agingNpc = legacyGame.state.relationships[0];
+legacyGame.ageUp();
+assert.equal(agingNpc.avatar.age, agingNpc.alive === false ? agingNpc.deathAge : agingNpc.age, "NPC portraits must update during annual aging");
 const lateRelative = legacyGame.state.relationships[0];
 lateRelative.alive = false;
 lateRelative.deathAge = lateRelative.age;

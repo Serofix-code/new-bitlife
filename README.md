@@ -4,7 +4,15 @@
 
 Create a character, progress through an entire lifetime, make choices, build relationships, pursue education and careers, manage money and property, experience supernatural paths, and continue the family story across generations.
 
-## Current version: 2.7.0
+## Current version: 2.8.0
+
+### Portraits grow with every character
+
+- Player and NPC portraits automatically change at age 5, 13, and 18.
+- Ages 0–4 use a baby/toddler portrait, ages 5–12 use a child portrait, ages 13–17 use a teen portrait, and ages 18+ use an adult portrait.
+- Girls, boys, women, men, and nonbinary characters receive distinct identity-aware facial and clothing details without overriding chosen hairstyles.
+- Senior characters receive an additional later-life portrait treatment.
+- Existing saves synchronize portrait ages automatically when loaded.
 
 ### Families, portraits, and the Life Journal
 

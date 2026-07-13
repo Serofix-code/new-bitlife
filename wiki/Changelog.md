@@ -1,5 +1,14 @@
 # Changelog
 
+## v2.8.0
+
+- Baby/toddler portraits for ages 0–4
+- Child portraits for ages 5–12
+- Teen portraits for ages 13–17
+- Adult portraits from age 18 and senior styling later in life
+- Identity-aware facial and clothing details for all characters
+- Automatic portrait aging for players, NPCs, heirs, existing saves, and age-changing events
+
 ## v2.7.0
 
 - Dated, randomized birth records and family-origin stories

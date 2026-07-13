@@ -1,5 +1,9 @@
 # How the Game Works
 
+## Portrait aging
+
+Every portrait is linked to the character's actual age. Babies and toddlers use the age 0–4 portrait, children switch at age 5, teens switch at age 13, and adults switch at age 18. Later-life characters also gain senior details. This applies to the player, parents, siblings, partners, children, other relationships, and inherited playable heirs. Identity-aware details distinguish girls, boys, women, men, and nonbinary characters while preserving their selected hair, color, and accessories.
+
 ## Age progression
 
 Pressing **Age** advances the character by one year. The engine updates relationships, education, careers, finances, health, owned assets, investments, crypto, businesses, housing, social media, fame, and mortality before selecting the next annual event.

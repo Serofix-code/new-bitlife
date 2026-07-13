@@ -28,7 +28,14 @@ Next Chapter is an original, offline-first browser life simulator. Create a char
 The website also includes `guide.html`, which presents the game guide directly beside the simulator.
 
 
-## New in v2.7.0
+## New in v2.8.0
+
+- Player and NPC portraits grow through baby, child, teen, adult, and senior stages
+- Automatic portrait changes at ages 5, 13, and 18
+- Identity-aware details for girls, boys, women, men, and nonbinary characters
+- Automatic portrait synchronization for existing saves, heirs, and all relationships
+
+## Added in v2.7.0
 
 - Dated, randomized birth stories
 - Adoption and blended-family histories for same-gender parents
