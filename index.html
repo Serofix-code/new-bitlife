@@ -25,6 +25,7 @@
   <div id="modal-root"></div>
   <div id="toast-root" class="toast-stack" aria-live="assertive" aria-atomic="true"></div>
   <input id="import-file" class="sr-only" type="file" accept="application/json,.json">
+  <input id="mod-import-file" class="sr-only" type="file" accept="application/json,.json,.nextchaptermod">
 
   <!-- Classic scripts are intentional: they work when index.html is opened through file://. -->
   <script defer src="js/core/namespace.js"></script>
@@ -51,6 +52,7 @@
   <script defer src="js/core/v26.js"></script>
   <script defer src="js/core/v27.js"></script>
   <script defer src="js/core/v28.js"></script>
+  <script defer src="js/core/v29.js"></script>
   <script defer src="js/ui/v16-view.js"></script>
   <script defer src="js/ui/v17-view.js"></script>
   <script defer src="js/ui/v18-view.js"></script>
@@ -62,6 +64,7 @@
   <script defer src="js/ui/v25-view.js"></script>
   <script defer src="js/ui/v26-view.js"></script>
   <script defer src="js/ui/v27-view.js"></script>
+  <script defer src="js/ui/v29-view.js"></script>
   <script defer src="js/ui/v16-app.js"></script>
   <script defer src="js/ui/v17-app.js"></script>
   <script defer src="js/ui/v18-app.js"></script>
@@ -73,6 +76,7 @@
   <script defer src="js/ui/v25-app.js"></script>
   <script defer src="js/ui/v26-app.js"></script>
   <script defer src="js/ui/v27-app.js"></script>
+  <script defer src="js/ui/v29-app.js"></script>
   <script>
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
       navigator.serviceWorker.register("sw.js").catch(() => {});

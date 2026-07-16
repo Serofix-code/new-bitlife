@@ -54,6 +54,12 @@ for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
   if (relative.startsWith("#") || relative.startsWith("data:")) continue;
   await fs.access(path.join(root, relative));
 }
+const modMakerHtml = await fs.readFile(path.join(root, "mod-maker.html"), "utf8");
+assert.match(modMakerHtml, /Mod Maker · Early Release|Mod Maker — Early Release/);
+assert.match(modMakerHtml, /id="download"/);
+assert.match(modMakerHtml, /Live preview/);
+assert.match(modMakerHtml, /nextchaptermod\.json/);
+await fs.access(path.join(root, "wiki", "Mod-Maker.md"));
 
 class MemoryStorage {
   constructor() { this.map = new Map(); }
@@ -111,6 +117,7 @@ for (const relative of [
   "js/core/v26.js",
   "js/core/v27.js",
   "js/core/v28.js",
+  "js/core/v29.js",
   "js/ui/render.js",
   "js/ui/expansion-view.js",
   "js/ui/v16-view.js",
@@ -123,7 +130,8 @@ for (const relative of [
   "js/ui/v24-view.js",
   "js/ui/v25-view.js",
   "js/ui/v26-view.js",
-  "js/ui/v27-view.js"
+  "js/ui/v27-view.js",
+  "js/ui/v29-view.js"
 ]) {
   vm.runInContext(await fs.readFile(path.join(root, relative), "utf8"), context, { filename: relative });
 }
@@ -156,6 +164,10 @@ vm.runInContext(await fs.readFile(path.join(root, "js/ui/v20-app.js"), "utf8"), 
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v21-app.js"), "utf8"), context, { filename: "js/ui/v21-app.js" });
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v23-app.js"), "utf8"), context, { filename: "js/ui/v23-app.js" });
 vm.runInContext(await fs.readFile(path.join(root, "js/ui/v24-app.js"), "utf8"), context, { filename: "js/ui/v24-app.js" });
+vm.runInContext(await fs.readFile(path.join(root, "js/ui/v25-app.js"), "utf8"), context, { filename: "js/ui/v25-app.js" });
+vm.runInContext(await fs.readFile(path.join(root, "js/ui/v26-app.js"), "utf8"), context, { filename: "js/ui/v26-app.js" });
+vm.runInContext(await fs.readFile(path.join(root, "js/ui/v27-app.js"), "utf8"), context, { filename: "js/ui/v27-app.js" });
+vm.runInContext(await fs.readFile(path.join(root, "js/ui/v29-app.js"), "utf8"), context, { filename: "js/ui/v29-app.js" });
 const startupApp = new NC.AppController({ catalogs: { origins: [{ id: "test", firstNames: ["A"], lastNames: ["B"] }], upbringings: [{ id: "test" }] } }, {});
 assert.equal(startupApp.game, null);
 assert.equal(startupApp.tab, "life");
@@ -166,6 +178,23 @@ game.createCharacter({ firstName: "Ada", lastName: "Test", identity: "nonbinary"
 assert.equal(game.state.age, 0);
 assert.equal(game.state.profile.specialTalent, "business");
 assert.ok(game.state.relationships.length >= 2);
+assert.equal(game.state.activityPoints, 999, "v2.9 actions should be unlimited from birth");
+game.spendTimeWithAll();
+game.spendTimeWithAll();
+assert.equal(game.state.activityPoints, 999, "repeated actions must not require aging up");
+
+const sampleMod = {
+  schemaVersion: 1, id: "test-mod", name: "Test Mod", author: "Tests", description: "A safe test event.", color: "#8b5cf6",
+  events: [{ id: "surprise", title: "A modded surprise", text: "A custom event appears.", icon: "🧩", minAge: 5, maxAge: 80, choices: [
+    { id: "join", label: "Join in", outcome: "You join the fun.", effects: { stats: { happiness: 5 } } },
+    { id: "leave", label: "Leave", outcome: "You head home.", effects: { stats: { resilience: 2 } } }
+  ] }]
+};
+const installedMod = NC.Mods.install(sampleMod);
+assert.equal(installedMod.events.length, 1);
+const moddedData = NC.Mods.applyToData(NC.Utils.deepClone(data));
+assert.ok(moddedData.eventsById["mod_test-mod_surprise"], "installed mod events must join the runtime catalog");
+NC.Mods.remove("test-mod");
 
 for (let year = 0; year < 20; year += 1) {
   game.ageUp();
@@ -509,6 +538,12 @@ lateRelative.deathCause = "a test illness";
 const legacyHtml = NC.View.familyLegacyModal({ game: legacyGame });
 assert.match(legacyHtml, /Family Legacy/);
 assert.match(legacyHtml, /a test illness/);
+const favoriteHtml = NC.View.activities({ game: legacyGame, data, store: { available: true }, tab: "activities" });
+assert.match(favoriteHtml, /Favorite activities/);
+assert.match(favoriteHtml, /∞ actions/);
+assert.match(NC.View.people({ game: legacyGame, data, store: { available: true }, tab: "people" }), /Spend Time With All/);
+assert.match(NC.View.mainMenuModal({ game: legacyGame }), /Mods &amp; Mod Maker|Mods & Mod Maker/);
+assert.match(NC.View.modsModal({ game: legacyGame }), /Install a mod file/);
 
 
 // Dynamic fertility, family-building, age locks, and pronoun-template checks.

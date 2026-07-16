@@ -1,5 +1,11 @@
 # How the Game Works
 
+## Unlimited actions and motion
+
+Actions no longer run out. The infinity indicator replaces the old annual action counter, so players can explore activities, relationships, jobs, jail actions, and expansion systems for as long as they want before choosing to age up. Age restrictions, costs, incarceration rules, pending events, and other gameplay requirements still apply.
+
+Pages slide into place, dialogs pop in, buttons respond when pressed, completed actions show brief feedback, and supernatural actions can use special full-screen effects. Reduced-motion preferences disable these animations automatically.
+
 ## Portrait aging
 
 Every portrait is linked to the character's actual age. Babies and toddlers use the age 0–4 portrait, children switch at age 5, teens switch at age 13, and adults switch at age 18. Later-life characters also gain senior details. This applies to the player, parents, siblings, partners, children, other relationships, and inherited playable heirs. Identity-aware details distinguish girls, boys, women, men, and nonbinary characters while preserving their selected hair, color, and accessories.

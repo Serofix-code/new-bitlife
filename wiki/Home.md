@@ -24,11 +24,20 @@ Next Chapter is an original, offline-first browser life simulator. Create a char
 - [Special Careers](Special-Careers)
 - [Accounts, Saves, Challenges, and Ribbons](Accounts-Saves-and-Ribbons)
 - [Developer Cheats](Developer-Cheats)
+- [Mod Maker — Early Release](Mod-Maker)
 
 The website also includes `guide.html`, which presents the game guide directly beside the simulator.
 
 
-## New in v2.8.0
+## New in v2.9.0
+
+- Unlimited actions across activities, relationships, work, jail, and expansion systems
+- Recording-inspired page, popup, action, and supernatural animations
+- Favorite Activities quick-access shelf
+- Spend Time With All relationship action
+- Early-release standalone Mod Maker and in-game mod manager
+
+## Added in v2.8.0
 
 - Player and NPC portraits grow through baby, child, teen, adult, and senior stages
 - Automatic portrait changes at ages 5, 13, and 18

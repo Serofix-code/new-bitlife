@@ -4677,3 +4677,31 @@ html[data-theme="light"] .v19-contraception.selected { background: #d8f3fb !impo
   .v27-birth-record { grid-template-columns: 64px 1fr; }
   .v27-birth-record img { width: 64px; height: 64px; }
 }
+
+/* Next Chapter 2.9 — recording-inspired motion, favorites, and mods */
+@keyframes v29-page-in { from { opacity: 0; transform: translateX(18px) scale(.992); } to { opacity: 1; transform: none; } }
+@keyframes v29-pop-in { 0% { opacity: 0; transform: translateY(24px) scale(.94); } 70% { transform: translateY(-3px) scale(1.01); } 100% { opacity: 1; transform: none; } }
+@keyframes v29-action-pulse { 0% { opacity: 0; transform: translate(-50%, 12px) scale(.8); } 20%,75% { opacity: 1; transform: translate(-50%, 0) scale(1); } 100% { opacity: 0; transform: translate(-50%, -8px) scale(.96); } }
+@keyframes v29-drip { 0% { transform: translateY(-110vh) scaleY(.45); } 65% { transform: translateY(0) scaleY(1.15); } 100% { transform: translateY(110vh) scaleY(.7); } }
+.v18-main-content > *, .v16-main-content > * { animation: v29-page-in .3s cubic-bezier(.2,.8,.2,1) both; }
+.modal-backdrop { animation: v29-page-in .18s ease-out both; }
+.modal-backdrop > .dialog { animation: v29-pop-in .3s cubic-bezier(.2,.9,.25,1.15) both; }
+button, .button, .v29-favorite-card { transition: transform .16s ease, filter .16s ease, border-color .16s ease, box-shadow .16s ease !important; }
+button:active:not(:disabled), .button:active:not(:disabled) { transform: scale(.965); }
+body.v29-action-running::after { content: "✨ Action complete"; position: fixed; z-index: 9999; left: 50%; bottom: calc(105px + env(safe-area-inset-bottom)); padding: .58rem .9rem; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(10,17,25,.94); color: white; box-shadow: 0 10px 35px rgba(0,0,0,.35); font-size: .8rem; font-weight: 900; pointer-events: none; animation: v29-action-pulse .52s ease both; }
+.v29-occult-splash { position: fixed; inset: 0; z-index: 10000; overflow: hidden; pointer-events: none; background: radial-gradient(circle at center, rgba(104,0,25,.42), rgba(12,0,8,.88)); display: grid; place-items: center; }
+.v29-occult-splash i { position: absolute; top: -30vh; width: 17vw; height: 80vh; border-radius: 0 0 50% 50%; background: linear-gradient(#9d0027,#e20b3f); filter: drop-shadow(0 0 18px #bd002e); animation: v29-drip .85s ease-in both; }
+.v29-occult-splash i:nth-child(1) { left: 8%; animation-delay: .02s; }.v29-occult-splash i:nth-child(2) { left: 41%; width: 25vw; animation-delay: .11s; }.v29-occult-splash i:nth-child(3) { right: 6%; animation-delay: .05s; }
+.v29-occult-splash strong { position: relative; z-index: 2; color: white; font-size: 1.5rem; text-transform: uppercase; letter-spacing: .12em; text-shadow: 0 3px 18px black; }
+.v29-favorites { margin: .85rem 0 1rem; border: 1px solid rgba(0,190,230,.25); border-radius: 17px; overflow: hidden; background: linear-gradient(140deg, rgba(0,158,210,.12), rgba(110,80,210,.08)); }
+.v29-section-title { display: flex; justify-content: space-between; align-items: center; padding: .78rem 1rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+.v29-section-title > div { display: flex; align-items: center; gap: .65rem; }.v29-section-title > div > span { font-size: 1.5rem; }.v29-section-title h3,.v29-section-title p { margin: 0; }.v29-section-title p { color: var(--muted); font-size: .78rem; }.v29-section-title small { color: var(--v18-cyan); font-weight: 900; }
+.v29-favorite-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+.v29-favorite-card { position: relative; display: grid; grid-template-columns: 42px 1fr auto; grid-template-rows: auto auto; gap: .1rem .65rem; align-items: center; padding: .8rem; border: 0; border-right: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); background: transparent; color: var(--text); text-align: left; cursor: pointer; }
+.v29-favorite-card:hover:not(:disabled) { background: rgba(0,190,230,.12); transform: translateY(-2px); }.v29-favorite-card:disabled { opacity: .45; cursor: not-allowed; }
+.v29-favorite-card > span { grid-row: 1/3; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: rgba(0,190,230,.15); font-size: 1.3rem; }.v29-favorite-card strong { color: var(--v18-blue-bright); }.v29-favorite-card small { color: var(--muted); }.v29-favorite-card b { grid-column: 3; grid-row: 1/3; color: var(--v18-cyan); font-size: 1.4rem; }
+.v29-spend-all { margin-right: .45rem; }
+.v29-mod-dialog { width: min(790px,calc(100vw - 24px)); }.v29-mod-hero { display: flex; justify-content: space-between; gap: 1rem; align-items: center; margin-bottom: 1rem; padding: 1.15rem; border: 1px solid rgba(139,92,246,.38); border-radius: 18px; background: linear-gradient(135deg,rgba(139,92,246,.2),rgba(0,190,230,.12)); }.v29-mod-hero span { color: #c4a8ff; font-size: .72rem; font-weight: 950; letter-spacing: .1em; }.v29-mod-hero h3 { margin: .25rem 0; }.v29-mod-hero p { margin: 0; color: var(--muted); }.v29-mod-list { display: grid; gap: .6rem; margin-top: 1rem; }
+.v29-mod-card { display: grid; grid-template-columns: 54px 1fr auto; gap: .8rem; align-items: center; padding: .8rem; border: 1px solid var(--border); border-left: 5px solid var(--mod-color); border-radius: 15px; background: var(--surface-soft); }.v29-mod-icon { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 14px; background: color-mix(in srgb,var(--mod-color) 22%,transparent); font-size: 1.5rem; }.v29-mod-card h3,.v29-mod-card p { margin: 0; }.v29-mod-card p,.v29-mod-card small { color: var(--muted); }.v29-mod-actions { display: flex; gap: .4rem; }
+@media (max-width:720px) { .v29-favorite-grid { grid-template-columns: 1fr 1fr; }.v29-mod-hero { align-items: stretch; flex-direction: column; }.v29-mod-card { grid-template-columns: 46px 1fr; }.v29-mod-actions { grid-column: 1/-1; }.v29-mod-actions .button { flex: 1; } }
+@media (prefers-reduced-motion:reduce) { .v18-main-content > *,.v16-main-content > *,.modal-backdrop,.modal-backdrop > .dialog,body.v29-action-running::after,.v29-occult-splash i { animation-duration: .01ms !important; } }

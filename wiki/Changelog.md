@@ -1,5 +1,15 @@
 # Changelog
 
+## v2.9.0
+
+- Unlimited actions; no action recharge required after aging up
+- Animated page changes, popup entrances, button presses, action feedback, and vampire effects
+- Favorite Activities quick access inspired by the supplied recording
+- Spend Time With All relationship action
+- Standalone `mod-maker.html` with live preview and JSON export
+- In-game mod manager with installation, enabling, disabling, and removal
+- Custom annual event runtime with sanitized choices, outcomes, cash, and stat effects
+
 ## v2.8.0
 
 - Baby/toddler portraits for ages 0–4

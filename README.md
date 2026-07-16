@@ -4,7 +4,21 @@
 
 Create a character, progress through an entire lifetime, make choices, build relationships, pursue education and careers, manage money and property, experience supernatural paths, and continue the family story across generations.
 
-## Current version: 2.8.0
+## Current version: 2.9.0
+
+### Unlimited actions, motion, and Mod Maker
+
+- Actions are unlimited. Explore activities, relationships, work, and other systems without aging up to refill action points.
+- Page transitions, popups, buttons, action feedback, and supernatural actions now have recording-inspired animations.
+- Favorite Activities provides quick access to Love, Mind & Body, Pets, Salon & Spa, Emigration, and Casino systems.
+- Relationships include **Spend Time With All**.
+- The early-release Mod Maker creates installable custom life-event files without coding.
+
+## Open the Mod Maker
+
+[**Launch the Mod Maker on GitHub Pages →**](https://serofix-code.github.io/new-bitlife/mod-maker.html)
+
+It also works offline: open `mod-maker.html`, export a `.nextchaptermod.json` file, then install it through **Main Menu → Mods & Mod Maker**. See the [Mod Maker guide](wiki/Mod-Maker.md).
 
 ### Portraits grow with every character
 
